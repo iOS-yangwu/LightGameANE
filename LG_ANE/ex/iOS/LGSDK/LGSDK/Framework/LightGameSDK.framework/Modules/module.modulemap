@@ -1,0 +1,6 @@
+framework module LightGameSDK {
+  umbrella header "LightGameSDK.h"
+
+  export *
+  module * { export * }
+}

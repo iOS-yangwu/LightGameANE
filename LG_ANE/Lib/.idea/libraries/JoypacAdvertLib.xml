@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="JoypacAdvertLib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/bin/JoypacAdvertLib.swc!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

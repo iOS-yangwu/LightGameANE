@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		66445E0B2511FD610017837A /* LGBDConfig_ANE.m in Sources */ = {isa = PBXBuildFile; fileRef = 66445E0A2511FD610017837A /* LGBDConfig_ANE.m */; };
+		666082AA236A86A70029F94F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666082A9236A86A60029F94F /* CoreFoundation.framework */; };
+		66938F6F236FD2F300A3BD48 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66938F6E236FD2F200A3BD48 /* libsqlite3.tbd */; };
+		66938F71236FD31000A3BD48 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66938F70236FD31000A3BD48 /* libc++.tbd */; };
+		66938F73236FD31600A3BD48 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66938F72236FD31600A3BD48 /* libxml2.tbd */; };
+		66938F75236FD31B00A3BD48 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66938F74236FD31B00A3BD48 /* libz.tbd */; };
+		66938F77236FD32300A3BD48 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66938F76236FD32200A3BD48 /* libz.1.2.5.tbd */; };
+		66938F79236FD32D00A3BD48 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66938F78236FD32D00A3BD48 /* libresolv.9.tbd */; };
+		66938FB9237062FA00A3BD48 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66938FB8237062FA00A3BD48 /* VideoToolbox.framework */; };
+		66938FBB237062FF00A3BD48 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66938FBA237062FF00A3BD48 /* LocalAuthentication.framework */; };
+		66938FBD2370630400A3BD48 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66938FBC2370630400A3BD48 /* CoreImage.framework */; };
+		669D944C25109E6500DDA687 /* LGNativeExpressFullScreenVideoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 669D944B25109E6500DDA687 /* LGNativeExpressFullScreenVideoManager.m */; };
+		669D94512510D6F600DDA687 /* JSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 669D94502510D6F600DDA687 /* JSONSerialization.m */; };
+		669D94552510D8BB00DDA687 /* LGCustomAutoTrack_ANE.m in Sources */ = {isa = PBXBuildFile; fileRef = 669D94542510D8BB00DDA687 /* LGCustomAutoTrack_ANE.m */; };
+		66B566C3228A651D0012F5A6 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B566C2228A651D0012F5A6 /* WebKit.framework */; };
+		66B566C5228A65240012F5A6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B566C4228A65240012F5A6 /* AVFoundation.framework */; };
+		66B566C7228A652E0012F5A6 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B566C6228A652E0012F5A6 /* Photos.framework */; };
+		66B566C9228A65380012F5A6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B566C8228A65380012F5A6 /* Accelerate.framework */; };
+		66B566CD228A65520012F5A6 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B566CC228A65520012F5A6 /* CoreTelephony.framework */; };
+		66B566CF228A655A0012F5A6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B566CE228A65590012F5A6 /* CoreLocation.framework */; };
+		66B566D1228A657C0012F5A6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B566D0228A657C0012F5A6 /* QuartzCore.framework */; };
+		66B566D3228A65840012F5A6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B566D2228A65840012F5A6 /* StoreKit.framework */; };
+		66B566D5228A65960012F5A6 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B566D4228A65960012F5A6 /* AdSupport.framework */; };
+		66B566D7228A65A20012F5A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B566D6228A65A20012F5A6 /* UIKit.framework */; };
+		66B566D9228A65AB0012F5A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B566D8228A65AB0012F5A6 /* Foundation.framework */; };
+		66B566DB228A65B40012F5A6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B566DA228A65B40012F5A6 /* CoreGraphics.framework */; };
+		66B566DF228A69C70012F5A6 /* LGAdvertANEUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B566DE228A69C70012F5A6 /* LGAdvertANEUtils.m */; };
+		66B566E4228A6DEF0012F5A6 /* LGAdvertANE.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B566E3228A6DEF0012F5A6 /* LGAdvertANE.m */; };
+		66EB443B2509DD99005370CD /* LGManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EB443A2509DD99005370CD /* LGManager.m */; };
+		66EB44422509DE9F005370CD /* LightGameSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EB443E2509DE9C005370CD /* LightGameSDK.framework */; };
+		66EB44472509F993005370CD /* LGRewardVideoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EB44462509F993005370CD /* LGRewardVideoManager.m */; };
+		66EB444C250A2316005370CD /* LGNativeExpressRewardedVideoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EB444B250A2316005370CD /* LGNativeExpressRewardedVideoManager.m */; };
+		66EB4450250A3E8D005370CD /* LGFullScreenVideoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EB444F250A3E8D005370CD /* LGFullScreenVideoManager.m */; };
+		66F19B1D2372D815004540CE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F19B1C2372D815004540CE /* AudioToolbox.framework */; };
+		66F19B1F2372D824004540CE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F19B1E2372D824004540CE /* CFNetwork.framework */; };
+		66F19B212372D873004540CE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F19B202372D873004540CE /* CoreMedia.framework */; };
+		66F19B232372D885004540CE /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F19B222372D885004540CE /* CoreMotion.framework */; };
+		66F19B252372D89E004540CE /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F19B242372D89E004540CE /* SafariServices.framework */; };
+		66F19B272372D8AE004540CE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F19B262372D8AE004540CE /* Security.framework */; };
+		66F19B292372D8C8004540CE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F19B282372D8C8004540CE /* SystemConfiguration.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		66B56582228A622C0012F5A6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		66445E092511FD610017837A /* LGBDConfig_ANE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGBDConfig_ANE.h; sourceTree = "<group>"; };
+		66445E0A2511FD610017837A /* LGBDConfig_ANE.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGBDConfig_ANE.m; sourceTree = "<group>"; };
+		666082A9236A86A60029F94F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		66938F6E236FD2F200A3BD48 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libsqlite3.tbd; sourceTree = DEVELOPER_DIR; };
+		66938F70236FD31000A3BD48 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libc++.tbd"; sourceTree = DEVELOPER_DIR; };
+		66938F72236FD31600A3BD48 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libxml2.tbd; sourceTree = DEVELOPER_DIR; };
+		66938F74236FD31B00A3BD48 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
+		66938F76236FD32200A3BD48 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libz.1.2.5.tbd; sourceTree = DEVELOPER_DIR; };
+		66938F78236FD32D00A3BD48 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libresolv.9.tbd; sourceTree = DEVELOPER_DIR; };
+		66938FB8237062FA00A3BD48 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/VideoToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		66938FBA237062FF00A3BD48 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/LocalAuthentication.framework; sourceTree = DEVELOPER_DIR; };
+		66938FBC2370630400A3BD48 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CoreImage.framework; sourceTree = DEVELOPER_DIR; };
+		669D944A25109E6500DDA687 /* LGNativeExpressFullScreenVideoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGNativeExpressFullScreenVideoManager.h; sourceTree = "<group>"; };
+		669D944B25109E6500DDA687 /* LGNativeExpressFullScreenVideoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGNativeExpressFullScreenVideoManager.m; sourceTree = "<group>"; };
+		669D944F2510D6F600DDA687 /* JSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONSerialization.h; sourceTree = "<group>"; };
+		669D94502510D6F600DDA687 /* JSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONSerialization.m; sourceTree = "<group>"; };
+		669D94532510D8BB00DDA687 /* LGCustomAutoTrack_ANE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGCustomAutoTrack_ANE.h; sourceTree = "<group>"; };
+		669D94542510D8BB00DDA687 /* LGCustomAutoTrack_ANE.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGCustomAutoTrack_ANE.m; sourceTree = "<group>"; };
+		66B56584228A622C0012F5A6 /* libLGSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLGSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		66B566C2228A651D0012F5A6 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		66B566C4228A65240012F5A6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		66B566C6228A652E0012F5A6 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		66B566C8228A65380012F5A6 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		66B566CA228A654A0012F5A6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		66B566CC228A65520012F5A6 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		66B566CE228A65590012F5A6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		66B566D0228A657C0012F5A6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		66B566D2228A65840012F5A6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		66B566D4228A65960012F5A6 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		66B566D6228A65A20012F5A6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		66B566D8228A65AB0012F5A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		66B566DA228A65B40012F5A6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		66B566DD228A69C70012F5A6 /* LGAdvertANEUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGAdvertANEUtils.h; sourceTree = "<group>"; };
+		66B566DE228A69C70012F5A6 /* LGAdvertANEUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGAdvertANEUtils.m; sourceTree = "<group>"; };
+		66B566E0228A6A050012F5A6 /* FlashRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashRuntimeExtensions.h; sourceTree = "<group>"; };
+		66B566E1228A6BEB0012F5A6 /* LGFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGFunctions.h; sourceTree = "<group>"; };
+		66B566E2228A6DEF0012F5A6 /* LGAdvertANE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGAdvertANE.h; sourceTree = "<group>"; };
+		66B566E3228A6DEF0012F5A6 /* LGAdvertANE.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGAdvertANE.m; sourceTree = "<group>"; };
+		66EB44392509DD99005370CD /* LGManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGManager.h; sourceTree = "<group>"; };
+		66EB443A2509DD99005370CD /* LGManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGManager.m; sourceTree = "<group>"; };
+		66EB443D2509DE9B005370CD /* IESPhoto.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IESPhoto.bundle; sourceTree = "<group>"; };
+		66EB443E2509DE9C005370CD /* LightGameSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LightGameSDK.framework; sourceTree = "<group>"; };
+		66EB443F2509DE9C005370CD /* BUAdSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BUAdSDK.bundle; sourceTree = "<group>"; };
+		66EB44402509DE9C005370CD /* LightGameSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LightGameSDK.bundle; sourceTree = "<group>"; };
+		66EB44412509DE9C005370CD /* BDTuringResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BDTuringResource.bundle; sourceTree = "<group>"; };
+		66EB44452509F993005370CD /* LGRewardVideoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGRewardVideoManager.h; sourceTree = "<group>"; };
+		66EB44462509F993005370CD /* LGRewardVideoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGRewardVideoManager.m; sourceTree = "<group>"; };
+		66EB444A250A2316005370CD /* LGNativeExpressRewardedVideoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGNativeExpressRewardedVideoManager.h; sourceTree = "<group>"; };
+		66EB444B250A2316005370CD /* LGNativeExpressRewardedVideoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGNativeExpressRewardedVideoManager.m; sourceTree = "<group>"; };
+		66EB444E250A3E8D005370CD /* LGFullScreenVideoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGFullScreenVideoManager.h; sourceTree = "<group>"; };
+		66EB444F250A3E8D005370CD /* LGFullScreenVideoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGFullScreenVideoManager.m; sourceTree = "<group>"; };
+		66F19B1C2372D815004540CE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		66F19B1E2372D824004540CE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		66F19B202372D873004540CE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		66F19B222372D885004540CE /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		66F19B242372D89E004540CE /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/SafariServices.framework; sourceTree = DEVELOPER_DIR; };
+		66F19B262372D8AE004540CE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		66F19B282372D8C8004540CE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		66B56581228A622C0012F5A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66F19B292372D8C8004540CE /* SystemConfiguration.framework in Frameworks */,
+				66F19B272372D8AE004540CE /* Security.framework in Frameworks */,
+				66F19B252372D89E004540CE /* SafariServices.framework in Frameworks */,
+				66F19B232372D885004540CE /* CoreMotion.framework in Frameworks */,
+				66F19B212372D873004540CE /* CoreMedia.framework in Frameworks */,
+				66F19B1F2372D824004540CE /* CFNetwork.framework in Frameworks */,
+				66F19B1D2372D815004540CE /* AudioToolbox.framework in Frameworks */,
+				66938FBD2370630400A3BD48 /* CoreImage.framework in Frameworks */,
+				66938FBB237062FF00A3BD48 /* LocalAuthentication.framework in Frameworks */,
+				66938FB9237062FA00A3BD48 /* VideoToolbox.framework in Frameworks */,
+				66938F79236FD32D00A3BD48 /* libresolv.9.tbd in Frameworks */,
+				66938F77236FD32300A3BD48 /* libz.1.2.5.tbd in Frameworks */,
+				66938F75236FD31B00A3BD48 /* libz.tbd in Frameworks */,
+				66938F73236FD31600A3BD48 /* libxml2.tbd in Frameworks */,
+				66938F71236FD31000A3BD48 /* libc++.tbd in Frameworks */,
+				66938F6F236FD2F300A3BD48 /* libsqlite3.tbd in Frameworks */,
+				666082AA236A86A70029F94F /* CoreFoundation.framework in Frameworks */,
+				66B566DB228A65B40012F5A6 /* CoreGraphics.framework in Frameworks */,
+				66EB44422509DE9F005370CD /* LightGameSDK.framework in Frameworks */,
+				66B566D9228A65AB0012F5A6 /* Foundation.framework in Frameworks */,
+				66B566D7228A65A20012F5A6 /* UIKit.framework in Frameworks */,
+				66B566D5228A65960012F5A6 /* AdSupport.framework in Frameworks */,
+				66B566D3228A65840012F5A6 /* StoreKit.framework in Frameworks */,
+				66B566D1228A657C0012F5A6 /* QuartzCore.framework in Frameworks */,
+				66B566CF228A655A0012F5A6 /* CoreLocation.framework in Frameworks */,
+				66B566CD228A65520012F5A6 /* CoreTelephony.framework in Frameworks */,
+				66B566C9228A65380012F5A6 /* Accelerate.framework in Frameworks */,
+				66B566C7228A652E0012F5A6 /* Photos.framework in Frameworks */,
+				66B566C5228A65240012F5A6 /* AVFoundation.framework in Frameworks */,
+				66B566C3228A651D0012F5A6 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		669D944925109DD800DDA687 /* nativeExpressFullScreenVideo */ = {
+			isa = PBXGroup;
+			children = (
+				669D944A25109E6500DDA687 /* LGNativeExpressFullScreenVideoManager.h */,
+				669D944B25109E6500DDA687 /* LGNativeExpressFullScreenVideoManager.m */,
+			);
+			path = nativeExpressFullScreenVideo;
+			sourceTree = "<group>";
+		};
+		669D944D2510D6A400DDA687 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				669D944E2510D6AD00DDA687 /* JSONSerialization */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		669D944E2510D6AD00DDA687 /* JSONSerialization */ = {
+			isa = PBXGroup;
+			children = (
+				669D944F2510D6F600DDA687 /* JSONSerialization.h */,
+				669D94502510D6F600DDA687 /* JSONSerialization.m */,
+			);
+			path = JSONSerialization;
+			sourceTree = "<group>";
+		};
+		669D94522510D8A700DDA687 /* LGCustomAutoTrack_ANE */ = {
+			isa = PBXGroup;
+			children = (
+				669D94532510D8BB00DDA687 /* LGCustomAutoTrack_ANE.h */,
+				669D94542510D8BB00DDA687 /* LGCustomAutoTrack_ANE.m */,
+			);
+			path = LGCustomAutoTrack_ANE;
+			sourceTree = "<group>";
+		};
+		66B5657B228A622C0012F5A6 = {
+			isa = PBXGroup;
+			children = (
+				66B56586228A622C0012F5A6 /* LGSDK */,
+				66B56585228A622C0012F5A6 /* Products */,
+				66B566C1228A651D0012F5A6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		66B56585228A622C0012F5A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				66B56584228A622C0012F5A6 /* libLGSDK.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		66B56586228A622C0012F5A6 /* LGSDK */ = {
+			isa = PBXGroup;
+			children = (
+				669D94522510D8A700DDA687 /* LGCustomAutoTrack_ANE */,
+				669D944D2510D6A400DDA687 /* Tools */,
+				66EB44432509F933005370CD /* Ads */,
+				66EB443C2509DE93005370CD /* Framework */,
+				66EB44382509DD6F005370CD /* LGManager */,
+				66B566DC228A695B0012F5A6 /* LGAdvert */,
+			);
+			path = LGSDK;
+			sourceTree = "<group>";
+		};
+		66B566C1228A651D0012F5A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66F19B282372D8C8004540CE /* SystemConfiguration.framework */,
+				66F19B262372D8AE004540CE /* Security.framework */,
+				66F19B242372D89E004540CE /* SafariServices.framework */,
+				66F19B222372D885004540CE /* CoreMotion.framework */,
+				66F19B202372D873004540CE /* CoreMedia.framework */,
+				66F19B1E2372D824004540CE /* CFNetwork.framework */,
+				66F19B1C2372D815004540CE /* AudioToolbox.framework */,
+				66938FBC2370630400A3BD48 /* CoreImage.framework */,
+				66938FBA237062FF00A3BD48 /* LocalAuthentication.framework */,
+				66938FB8237062FA00A3BD48 /* VideoToolbox.framework */,
+				66938F78236FD32D00A3BD48 /* libresolv.9.tbd */,
+				66938F76236FD32200A3BD48 /* libz.1.2.5.tbd */,
+				66938F74236FD31B00A3BD48 /* libz.tbd */,
+				66938F72236FD31600A3BD48 /* libxml2.tbd */,
+				66938F70236FD31000A3BD48 /* libc++.tbd */,
+				66938F6E236FD2F200A3BD48 /* libsqlite3.tbd */,
+				666082A9236A86A60029F94F /* CoreFoundation.framework */,
+				66B566DA228A65B40012F5A6 /* CoreGraphics.framework */,
+				66B566D8228A65AB0012F5A6 /* Foundation.framework */,
+				66B566D6228A65A20012F5A6 /* UIKit.framework */,
+				66B566D4228A65960012F5A6 /* AdSupport.framework */,
+				66B566D2228A65840012F5A6 /* StoreKit.framework */,
+				66B566D0228A657C0012F5A6 /* QuartzCore.framework */,
+				66B566CE228A65590012F5A6 /* CoreLocation.framework */,
+				66B566CC228A65520012F5A6 /* CoreTelephony.framework */,
+				66B566CA228A654A0012F5A6 /* MobileCoreServices.framework */,
+				66B566C8228A65380012F5A6 /* Accelerate.framework */,
+				66B566C6228A652E0012F5A6 /* Photos.framework */,
+				66B566C4228A65240012F5A6 /* AVFoundation.framework */,
+				66B566C2228A651D0012F5A6 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		66B566DC228A695B0012F5A6 /* LGAdvert */ = {
+			isa = PBXGroup;
+			children = (
+				66B566E0228A6A050012F5A6 /* FlashRuntimeExtensions.h */,
+				66B566DD228A69C70012F5A6 /* LGAdvertANEUtils.h */,
+				66B566DE228A69C70012F5A6 /* LGAdvertANEUtils.m */,
+				66B566E1228A6BEB0012F5A6 /* LGFunctions.h */,
+				66B566E2228A6DEF0012F5A6 /* LGAdvertANE.h */,
+				66B566E3228A6DEF0012F5A6 /* LGAdvertANE.m */,
+			);
+			path = LGAdvert;
+			sourceTree = "<group>";
+		};
+		66EB44382509DD6F005370CD /* LGManager */ = {
+			isa = PBXGroup;
+			children = (
+				66EB44392509DD99005370CD /* LGManager.h */,
+				66EB443A2509DD99005370CD /* LGManager.m */,
+				66445E092511FD610017837A /* LGBDConfig_ANE.h */,
+				66445E0A2511FD610017837A /* LGBDConfig_ANE.m */,
+			);
+			path = LGManager;
+			sourceTree = "<group>";
+		};
+		66EB443C2509DE93005370CD /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				66EB44412509DE9C005370CD /* BDTuringResource.bundle */,
+				66EB443F2509DE9C005370CD /* BUAdSDK.bundle */,
+				66EB443D2509DE9B005370CD /* IESPhoto.bundle */,
+				66EB44402509DE9C005370CD /* LightGameSDK.bundle */,
+				66EB443E2509DE9C005370CD /* LightGameSDK.framework */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
+		66EB44432509F933005370CD /* Ads */ = {
+			isa = PBXGroup;
+			children = (
+				669D944925109DD800DDA687 /* nativeExpressFullScreenVideo */,
+				66EB444D250A3E75005370CD /* fullScreenVideo */,
+				66EB4449250A22EC005370CD /* nativeExpressRewardedVideo */,
+				66EB44442509F942005370CD /* rewardVideo */,
+			);
+			path = Ads;
+			sourceTree = "<group>";
+		};
+		66EB44442509F942005370CD /* rewardVideo */ = {
+			isa = PBXGroup;
+			children = (
+				66EB44452509F993005370CD /* LGRewardVideoManager.h */,
+				66EB44462509F993005370CD /* LGRewardVideoManager.m */,
+			);
+			path = rewardVideo;
+			sourceTree = "<group>";
+		};
+		66EB4449250A22EC005370CD /* nativeExpressRewardedVideo */ = {
+			isa = PBXGroup;
+			children = (
+				66EB444A250A2316005370CD /* LGNativeExpressRewardedVideoManager.h */,
+				66EB444B250A2316005370CD /* LGNativeExpressRewardedVideoManager.m */,
+			);
+			path = nativeExpressRewardedVideo;
+			sourceTree = "<group>";
+		};
+		66EB444D250A3E75005370CD /* fullScreenVideo */ = {
+			isa = PBXGroup;
+			children = (
+				66EB444E250A3E8D005370CD /* LGFullScreenVideoManager.h */,
+				66EB444F250A3E8D005370CD /* LGFullScreenVideoManager.m */,
+			);
+			path = fullScreenVideo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		66B56583228A622C0012F5A6 /* LGSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66B5658D228A622C0012F5A6 /* Build configuration list for PBXNativeTarget "LGSDK" */;
+			buildPhases = (
+				66B56580228A622C0012F5A6 /* Sources */,
+				66B56581228A622C0012F5A6 /* Frameworks */,
+				66B56582228A622C0012F5A6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LGSDK;
+			productName = JoypacSDK;
+			productReference = 66B56584228A622C0012F5A6 /* libLGSDK.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		66B5657C228A622C0012F5A6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "洋吴";
+				TargetAttributes = {
+					66B56583228A622C0012F5A6 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 66B5657F228A622C0012F5A6 /* Build configuration list for PBXProject "LGSDK" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 66B5657B228A622C0012F5A6;
+			productRefGroup = 66B56585228A622C0012F5A6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				66B56583228A622C0012F5A6 /* LGSDK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		66B56580228A622C0012F5A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				669D944C25109E6500DDA687 /* LGNativeExpressFullScreenVideoManager.m in Sources */,
+				669D94552510D8BB00DDA687 /* LGCustomAutoTrack_ANE.m in Sources */,
+				66B566DF228A69C70012F5A6 /* LGAdvertANEUtils.m in Sources */,
+				66B566E4228A6DEF0012F5A6 /* LGAdvertANE.m in Sources */,
+				66EB443B2509DD99005370CD /* LGManager.m in Sources */,
+				66445E0B2511FD610017837A /* LGBDConfig_ANE.m in Sources */,
+				66EB44472509F993005370CD /* LGRewardVideoManager.m in Sources */,
+				66EB444C250A2316005370CD /* LGNativeExpressRewardedVideoManager.m in Sources */,
+				669D94512510D6F600DDA687 /* JSONSerialization.m in Sources */,
+				66EB4450250A3E8D005370CD /* LGFullScreenVideoManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		66B5658B228A622C0012F5A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		66B5658C228A622C0012F5A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		66B5658E228A622C0012F5A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PC448W5874;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LGSDK/Framework",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-framework",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRIP_STYLE = debugging;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		66B5658F228A622C0012F5A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PC448W5874;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LGSDK/Framework",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-framework",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRIP_STYLE = debugging;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		66B5657F228A622C0012F5A6 /* Build configuration list for PBXProject "LGSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66B5658B228A622C0012F5A6 /* Debug */,
+				66B5658C228A622C0012F5A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66B5658D228A622C0012F5A6 /* Build configuration list for PBXNativeTarget "LGSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66B5658E228A622C0012F5A6 /* Debug */,
+				66B5658F228A622C0012F5A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 66B5657C228A622C0012F5A6 /* Project object */;
+}
