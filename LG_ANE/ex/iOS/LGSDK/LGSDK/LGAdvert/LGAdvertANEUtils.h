@@ -71,7 +71,7 @@ FREObject LGAdvertCreateFREBool(BOOL value);
 NSString *LGAdvertObj2ANEJSON(id obj);
 
 
-///向ANE发送消息
+///向ANE发送消息（字符串）
 void LGAdvertSendANEMessage(int what,NSString *code,NSString *key,NSString *value);
 
 

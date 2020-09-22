@@ -7,6 +7,7 @@
 	import flash.events.IEventDispatcher;
 	import flash.events.StatusEvent;
 	import flash.external.ExtensionContext;
+	import flash.media.SoundLoaderContext;
 	import flash.system.Capabilities;
 
 
@@ -18,6 +19,10 @@
 
 
 		///================ set delegate ================
+		// sdk
+		private var BDConfigRegisterFinishBlockListener:Function;
+		private var BDConfigABTestFinishBlockListener:Function;
+
 		//rewardVideo
 		private var rewardedVideoAdDidLoadListener:Function;
 		private var rewardedVideoAdLoadFailListener:Function;
@@ -45,7 +50,7 @@
 		private var nativeExpressRewardedVideoAdDidCloseListener:Function;
 		private var nativeExpressRewardedVideoAdDidClickListener:Function;
 		private var nativeExpressRewardedVideoAdDidClickSkipListener:Function;
-		private var nativeExpressRewardedVideoAdDidPlayFinishFailListener:Function;
+		private var nativeExpressRewardedVideoAdDidPlayFinishListener:Function;
 		private var nativeExpressRewardedVideoAdServerRewardDidSucceedListener:Function;
 		private var nativeExpressRewardedVideoAdServerRewardDidFailListener:Function;
 		private var nativeExpressRewardedVideoAdDidCloseOtherControllerListener:Function;
@@ -59,86 +64,86 @@
 		private var fullscreenVideoAdDidClickListener:Function;
 		private var fullscreenVideoAdWillCloseListener:Function;
 		private var fullscreenVideoAdDidCloseListener:Function;
-		private var fullscreenVideoAdDidPlayFinishFailListener:Function;
+		private var fullscreenVideoAdDidPlayFinishListener:Function;
 		private var fullscreenVideoAdDidClickSkipListener:Function;
 
 		//nativeExpressFullscreenVideo
-		private var nativeExpressFullscreenVideoAdDidLoadListener:Function;
-		private var nativeExpressFullscreenVideoAdFailToLoadListener:Function;
-		private var nativeExpressFullscreenVideoAdViewRenderSuccessListener:Function;
-		private var nativeExpressFullscreenVideoAdViewRenderFailListener:Function;
-		private var nativeExpressFullscreenVideoAdDidDownLoadVideoListener:Function;
-		private var nativeExpressFullscreenVideoAdWillVisibleListener:Function;
-		private var nativeExpressFullscreenVideoAdDidVisibleListener:Function;
-		private var nativeExpressFullscreenVideoAdDidClickListener:Function;
-		private var nativeExpressFullscreenVideoAdDidClickSkipListener:Function;
-		private var nativeExpressFullscreenVideoAdWillCloseListener:Function;
-		private var nativeExpressFullscreenVideoAdDidCloseListener:Function;
-		private var nativeExpressFullscreenVideoAdDidPlayFinishFailListener:Function;
-		private var nativeExpressFullscreenVideoAdCallbackListener:Function;
-		private var nativeExpressFullscreenVideoAdDidCloseOtherControllerListener:Function;
+		private var nativeExpressFullScreenVideoAdDidLoadListener:Function;
+		private var nativeExpressFullScreenVideoAdFailToLoadListener:Function;
+		private var nativeExpressFullScreenVideoAdViewRenderSuccessListener:Function;
+		private var nativeExpressFullScreenVideoAdViewRenderFailListener:Function;
+		private var nativeExpressFullScreenVideoAdDidDownLoadVideoListener:Function;
+		private var nativeExpressFullScreenVideoAdWillVisibleListener:Function;
+		private var nativeExpressFullScreenVideoAdDidVisibleListener:Function;
+		private var nativeExpressFullScreenVideoAdDidClickListener:Function;
+		private var nativeExpressFullScreenVideoAdDidClickSkipListener:Function;
+		private var nativeExpressFullScreenVideoAdWillCloseListener:Function;
+		private var nativeExpressFullScreenVideoAdDidCloseListener:Function;
+		private var nativeExpressFullScreenVideoAdDidPlayFinishListener:Function;
+		private var nativeExpressFullScreenVideoAdCallbackListener:Function;
+		private var nativeExpressFullScreenVideoAdDidCloseOtherControllerListener:Function;
 
 
-//		private var _main:MovieClip = null;
+		private var _main:MovieClip = null;
 
-
-		private static function _isIOS():Boolean {
-			return Capabilities.manufacturer.indexOf("iOS") > -1 && Capabilities.os.indexOf("x86_64") < 0 && Capabilities.os.indexOf("i386") < 0;
+		//sdk
+		public  function  setBDConfigRegisterFinishBlockListener(listener:Function):void{
+			this.BDConfigRegisterFinishBlockListener = listener;
 		}
 
-		private static function _isAndroid():Boolean {
-
-			return Capabilities.manufacturer.indexOf("Android") > -1;
+		public  function  setBDConfigABTestFinishBlockListener(listener:Function):void{
+			this.BDConfigABTestFinishBlockListener = listener;
 		}
+
 
 		//rewardVideo
 		public function setRewardedVideoAdDidLoadListener(listener:Function):void{
 			this.rewardedVideoAdDidLoadListener = listener;
 		}
-		
+
 		public function setRewardedVideoAdLoadFailListener(listener:Function):void{
 			this.rewardedVideoAdLoadFailListener = listener;
 		}
-		
+
 		public function setRewardedVideoAdVideoDidLoadListener(listener:Function):void{
 			this.rewardedVideoAdVideoDidLoadListener = listener;
 		}
-		
+
 		public function setRewardedVideoAdWillVisibleListener(listener:Function):void{
 			this.rewardedVideoAdWillVisibleListener = listener;
 		}
-		
+
 		public function setRewardedVideoAdDidVisibleListener(listener:Function):void{
 			this.rewardedVideoAdDidVisibleListener = listener;
 		}
-		
+
 		public function setRewardedVideoAdWillCloseListener(listener:Function):void{
 			this.rewardedVideoAdWillCloseListener = listener;
 		}
-		
+
 		public function setRewardedVideoAdDidCloseListener(listener:Function):void{
 			this.rewardedVideoAdDidCloseListener = listener;
 		}
-		
+
 		public function setRewardedVideoAdDidClickListener(listener:Function):void{
-			
+
 			this.rewardedVideoAdDidClickListener = listener;
 		}
-		
+
 		public function setRewardedVideoAdDidPlayFinishFailListener(listener:Function):void{
 			this.rewardedVideoAdDidPlayFinishFailListener = listener;
 		}
-		
+
 		public function setRewardedVideoAdServerRewardDidSucceedListener(listener:Function):void{
 			this.rewardedVideoAdServerRewardDidSucceedListener = listener;
-			
+
 		}
-		
+
 		public function setRewardedVideoAdServerRewardDidFailListener(listener:Function):void{
 			this.rewardedVideoAdServerRewardDidFailListener = listener;
-			
+
 		}
-		
+
 		public function setRewardedVideoAdDidClickSkipListener(listener:Function):void {
 			this.rewardedVideoAdDidClickSkipListener = listener;
 		}
@@ -147,19 +152,19 @@
 		public function setNativeExpressRewardedVideoAdDidLoadListener(listener:Function):void {
 			this.nativeExpressRewardedVideoAdDidLoadListener = listener;
 		}
-		
+
 		public function setNativeExpressRewardedVideoAdFailToLoadListener(listener:Function):void {
 			this.nativeExpressRewardedVideoAdFailToLoadListener = listener;
 		}
-		
+
 		public function setNativeExpressRewardedVideoAdCallbackListener(listener:Function):void {
 			this.nativeExpressRewardedVideoAdCallbackListener = listener;
 		}
-		
+
 		public function setNativeExpressRewardedVideoAdDidDownLoadVideoListener(listener:Function):void {
 			this.nativeExpressRewardedVideoAdDidDownLoadVideoListener = listener;
 		}
-		
+
 		public function setNativeExpressRewardedVideoAdViewRenderSuccessListener(listener:Function):void {
 			this.nativeExpressRewardedVideoAdViewRenderSuccessListener = listener;
 		}
@@ -167,19 +172,19 @@
 		public function setNativeExpressRewardedVideoAdViewRenderFailListener(listener:Function):void {
 			this.nativeExpressRewardedVideoAdViewRenderFailListener = listener;
 		}
-		
+
 		public function setNativeExpressRewardedVideoAdWillVisibleListener(listener:Function):void {
 			this.nativeExpressRewardedVideoAdWillVisibleListener = listener;
 		}
 		public function setNativeExpressRewardedVideoAdDidVisibleListener(listener:Function):void {
 			this.nativeExpressRewardedVideoAdDidVisibleListener = listener;
 		}
-		
+
 		public function setNativeExpressRewardedVideoAdWillCloseListener(listener:Function):void {
 			this.nativeExpressRewardedVideoAdWillCloseListener = listener;
 		}
-		
-		public function setNativeExpressRewardedVideoAdDidCloseListenerVideoDidLoadListener(listener:Function):void {
+
+		public function setNativeExpressRewardedVideoAdDidCloseListener(listener:Function):void {
 			this.nativeExpressRewardedVideoAdDidCloseListener = listener;
 		}
 		public function setNativeExpressRewardedVideoAdDidClickListener(listener:Function):void {
@@ -188,15 +193,15 @@
 		public function setNativeExpressRewardedVideoAdDidClickSkipListener(listener:Function):void {
 			this.nativeExpressRewardedVideoAdDidClickSkipListener = listener;
 		}
-		
-		public function setNativeExpressRewardedVideoAdDidPlayFinishFailListener(listener:Function):void {
-			this.nativeExpressRewardedVideoAdDidPlayFinishFailListener = listener;
+
+		public function setNativeExpressRewardedVideoAdDidPlayFinishListener(listener:Function):void {
+			this.nativeExpressRewardedVideoAdDidPlayFinishListener = listener;
 		}
 
 		public function setNativeExpressRewardedVideoAdServerRewardDidSucceedListener(listener:Function):void {
 			this.nativeExpressRewardedVideoAdServerRewardDidSucceedListener = listener;
 		}
-		
+
 		public function setNativeExpressRewardedVideoAdServerRewardDidFailListener(listener:Function):void {
 			this.nativeExpressRewardedVideoAdServerRewardDidFailListener = listener;
 		}
@@ -215,25 +220,29 @@
 		public function setFullscreenVideoAdVideoDataDidLoadListener(listener:Function):void{
 			this.fullscreenVideoAdVideoDataDidLoadListener = listener;
 		}
-		
+
 		public function setFullscreenVideoAdWillVisibleListener(listener:Function):void{
 			this.fullscreenVideoAdWillVisibleListener = listener;
 		}
-		
+
 		public function setFullscreenVideoAdDidVisibleListener(listener:Function):void{
 			this.fullscreenVideoAdDidVisibleListener = listener;
 		}
-		
+
 		public function setFullscreenVideoAdDidClickListener(listener:Function):void{
 			this.fullscreenVideoAdDidClickListener = listener;
 		}
-		
+
+		public function setFullscreenVideoAdWillCloseListener(listener:Function):void{
+			this.fullscreenVideoAdWillCloseListener = listener;
+		}
+
 		public function setFullscreenVideoAdDidCloseListener(listener:Function):void{
 			this.fullscreenVideoAdDidCloseListener = listener;
 		}
 
-		public function setFullscreenVideoAdDidPlayFinishFailListener(listener:Function):void{
-			this.fullscreenVideoAdDidPlayFinishFailListener = listener;
+		public function setFullscreenVideoAdDidPlayFinishListener(listener:Function):void{
+			this.fullscreenVideoAdDidPlayFinishListener = listener;
 		}
 
 		public function setFullscreenVideoAdDidClickSkipListener(listener:Function):void{
@@ -241,60 +250,60 @@
 		}
 
 		//nativeExpressFullscreenVideo
-		public function setNativeExpressFullscreenVideoAdDidLoadListener(listener:Function):void{
-			this.nativeExpressFullscreenVideoAdDidLoadListener = listener;
+		public function setNativeExpressFullScreenVideoAdDidLoadListener(listener:Function):void{
+			this.nativeExpressFullScreenVideoAdDidLoadListener = listener;
 		}
 
-		public function setNativeExpressFullscreenVideoAdFailToLoadListener(listener:Function):void{
-			this.nativeExpressFullscreenVideoAdFailToLoadListener = listener;
+		public function setNativeExpressFullScreenVideoAdFailToLoadListener(listener:Function):void{
+			this.nativeExpressFullScreenVideoAdFailToLoadListener = listener;
 		}
 
-		public function setNativeExpressFullscreenVideoAdViewRenderSuccessListener(listener:Function):void{
-			this.nativeExpressFullscreenVideoAdViewRenderSuccessListener = listener;
+		public function setNativeExpressFullScreenVideoAdViewRenderSuccessListener(listener:Function):void{
+			this.nativeExpressFullScreenVideoAdViewRenderSuccessListener = listener;
 		}
 
-		public function setNativeExpressFullscreenVideoAdViewRenderFailListener(listener:Function):void{
-			this.nativeExpressFullscreenVideoAdViewRenderFailListener = listener;
+		public function setNativeExpressFullScreenVideoAdViewRenderFailListener(listener:Function):void{
+			this.nativeExpressFullScreenVideoAdViewRenderFailListener = listener;
 		}
 
-		public function setNativeExpressFullscreenVideoAdDidDownLoadVideoListener(listener:Function):void{
-			this.nativeExpressFullscreenVideoAdDidDownLoadVideoListener = listener;
+		public function setNativeExpressFullScreenVideoAdDidDownLoadVideoListener(listener:Function):void{
+			this.nativeExpressFullScreenVideoAdDidDownLoadVideoListener = listener;
 		}
 
-		public function setNativeExpressFullscreenVideoAdWillVisibleListener(listener:Function):void{
-			this.nativeExpressFullscreenVideoAdWillVisibleListener = listener;
+		public function setNativeExpressFullScreenVideoAdWillVisibleListener(listener:Function):void{
+			this.nativeExpressFullScreenVideoAdWillVisibleListener = listener;
 		}
 
-		public function setNativeExpressFullscreenVideoAdDidVisibleListener(listener:Function):void{
-			this.nativeExpressFullscreenVideoAdDidVisibleListener = listener;
+		public function setNativeExpressFullScreenVideoAdDidVisibleListener(listener:Function):void{
+			this.nativeExpressFullScreenVideoAdDidVisibleListener = listener;
 		}
 
-		public function setNativeExpressFullscreenVideoAdDidClickListener(listener:Function):void{
-			this.nativeExpressFullscreenVideoAdDidClickListener = listener;
+		public function setNativeExpressFullScreenVideoAdDidClickListener(listener:Function):void{
+			this.nativeExpressFullScreenVideoAdDidClickListener = listener;
 		}
 
-		public function setNativeExpressFullscreenVideoAdDidClickSkipListener(listener:Function):void{
-			this.nativeExpressFullscreenVideoAdDidClickSkipListener = listener;
+		public function setNativeExpressFullScreenVideoAdDidClickSkipListener(listener:Function):void{
+			this.nativeExpressFullScreenVideoAdDidClickSkipListener = listener;
 		}
 
-		public function setNativeExpressFullscreenVideoAdWillCloseListener(listener:Function):void{
-			this.nativeExpressFullscreenVideoAdWillCloseListener = listener;
+		public function setNativeExpressFullScreenVideoAdWillCloseListener(listener:Function):void{
+			this.nativeExpressFullScreenVideoAdWillCloseListener = listener;
 		}
 
-		public function setNativeExpressFullscreenVideoAdDidCloseListener(listener:Function):void{
-			this.nativeExpressFullscreenVideoAdDidCloseListener = listener;
+		public function setNativeExpressFullScreenVideoAdDidCloseListener(listener:Function):void{
+			this.nativeExpressFullScreenVideoAdDidCloseListener = listener;
 		}
 
-		public function setNativeExpressFullscreenVideoAdDidPlayFinishFailListener(listener:Function):void{
-			this.nativeExpressFullscreenVideoAdDidPlayFinishFailListener = listener;
+		public function setNativeExpressFullScreenVideoAdDidPlayFinishFailListener(listener:Function):void{
+			this.nativeExpressFullScreenVideoAdDidPlayFinishListener = listener;
 		}
 
-		public function setNativeExpressFullscreenVideoAdCallbackListener(listener:Function):void{
-			this.nativeExpressFullscreenVideoAdCallbackListener = listener;
+		public function setNativeExpressFullScreenVideoAdCallbackListener(listener:Function):void{
+			this.nativeExpressFullScreenVideoAdCallbackListener = listener;
 		}
 
-		public function setNativeExpressFullscreenVideoAdDidCloseOtherControllerListener(listener:Function):void{
-			this.nativeExpressFullscreenVideoAdDidCloseOtherControllerListener = listener;
+		public function setNativeExpressFullScreenVideoAdDidCloseOtherControllerListener(listener:Function):void{
+			this.nativeExpressFullScreenVideoAdDidCloseOtherControllerListener = listener;
 		}
 
 
@@ -333,7 +342,7 @@
 				trace("LG-Function-starSDK-Not a Android/iOS module");
 			}
 		}
-		
+
 		/**
 		 * @brief isDebugLog
 		 */
@@ -350,7 +359,7 @@
 				trace("LG-Function-isDebugLog-Not a Android/iOS module");
 			}
 		}
-		
+
 		/**
 		 * @brief debugType
 		 */
@@ -387,7 +396,7 @@
 				return "nil";
 			}
 		}
-		
+
 		/**
 		 *  @brief setCurrentUserUniqueID
 		 */
@@ -420,7 +429,7 @@
 				trace("LG-Function-setCustomHeaderBlock-Not a Android/iOS module");
 			}
 		}
-		
+
 		/**
 		 * @brief clearUserUniqueId
 		 */
@@ -437,7 +446,7 @@
 				trace("LG-Function-clearUserUniqueId-Not a Android/iOS module");
 			}
 		}
-		
+
 		/**
 		 * @brief setABSDKVersions
 		 */
@@ -492,7 +501,7 @@
 				trace("LG-Function-lg_event-Not a Android/iOS module");
 			}
 		}
-		
+
 		/**
 		 * @brief ABTestConfig
 		 */
@@ -528,7 +537,7 @@
 
 			}
 		}
-		
+
 		/**
 		 * @brief isValid
 		 */
@@ -548,7 +557,7 @@
 				return false;
 			}
 		}
-		
+
 		/**
 		 * @brief showRewardVideo
 		 */
@@ -568,7 +577,7 @@
 				return false;
 			}
 		}
-		
+
 		/**
 		 * @brief showRewardVideoFromScene
 		 */
@@ -608,7 +617,7 @@
 
 			}
 		}
-		
+
 		/**
 		 * @brief isValidNativeExpressRewardVideo
 		 */
@@ -628,7 +637,7 @@
 				return false;
 			}
 		}
-		
+
 		/**
 		 * @brief showNativeExpressRewardVideo
 		 */
@@ -648,7 +657,7 @@
 				return false;
 			}
 		}
-		
+
 		/**
 		 * @brief showNativeExpressRewardVideoFromScene
 		 */
@@ -671,6 +680,7 @@
 
 
 		///================ fullScreenRewardVideo ================
+
 		/**
 		 * @brief loadFullScreenVideo
 		 */
@@ -692,7 +702,6 @@
 		/**
 		 * @brief isValidFullScreenVideo
 		 */
-		
 		public static function isValidFullScreenVideo():Boolean{
 
 			if (_isIOS()){
@@ -709,6 +718,7 @@
 				return false;
 			}
 		}
+
 		/**
 		 * @brief showFullScreenVideo
 		 */
@@ -720,12 +730,14 @@
 
 			}else if (_isAndroid()){
 
+				return false;
 			}else{
 
 				trace("LG-Function-showFullScreenVideo-Not a Android/iOS module");
+				return false;
 			}
 		}
-		
+
 		/**
 		 * @brief showFullScreenVideoFromScene
 		 */
@@ -733,76 +745,120 @@
 
 			if (_isIOS()){
 
-				LGAdvert.getInstance().extContext.call(LGFunctions.FULL_SCREEN_VIDEO_SHOW_SCENE,ritSceneDesc);
+				return LGAdvert.getInstance().extContext.call(LGFunctions.FULL_SCREEN_VIDEO_SHOW_SCENE,ritSceneDesc);
 
 			}else if (_isAndroid()){
 
+				return false;
 			}else{
 
 				trace("LG-Function-showFullScreenVideoFromScene-Not a Android/iOS module");
-			}
-		}
-
-
-		public static function showSplash(iap:String,dispatchTime:String):void{
-
-			if (_isIOS()){
-
-				LGAdvert.getInstance().extContext.call(LGFunctions.JOYPAC_SPLASH_SHOW,iap,dispatchTime);
-
-			}else if (_isAndroid()){
-
-				//
-
-			}else{
-
-				trace("Joypac-Function-showSplash-Not a Android/iOS module");
-
-			}
-		}
-		
-		/**
-		 * isreadyIV
-		 */
-		public static function isPrepareInterstital():Boolean{
-
-			if (_isIOS()){
-
-				return LGAdvert.getInstance().extContext.call(LGFunctions.JOYPAC_JPCISREADY_IV);
-
-			}else if (_isAndroid()){
-
-				//
-				return false;
-
-			}else{
-
-				trace("Joypac-Function-isPrepareInterstital-Not a Android/iOS module");
 				return false;
 			}
 		}
 
-		/**
-		 * eventLog
-		 */
 
-		 public static function joypacEventLog(eventSort:String,eventType:String,eventPosition:String,eventExtra:String):void{
+		///================ nativeExpressFullScreenVideo ================
+
+		/**
+		 * @brief loadNativeExpressFullScreenVideo
+		 */
+		public static function loadNativeExpressFullScreenVideo(slotId:String):void{
 
 			if (_isIOS()){
 
-				LGAdvert.getInstance().extContext.call(LGFunctions.JOYPAC_EVENT_LOG,eventSort,eventType,eventPosition,eventExtra);
+				LGAdvert.getInstance().extContext.call(LGFunctions.NATIVE_EXPRESS_FULL_SCREEN_LOAD,slotId);
 
 			}else if (_isAndroid()){
 
-				//
-
 			}else{
 
+				trace("LG-Function-loadNativeExpressFullScreenVideo-Not a Android/iOS module");
 
 			}
 		}
-		
-	
+
+		/**
+		 *@brief isValidNativeExpressFullScreenVideo
+		 */
+		public static function isValidNativeExpressFullScreenVideo():Boolean{
+
+			if (_isIOS()){
+
+				return LGAdvert.getInstance().extContext.call(LGFunctions.NATIVE_EXPRESS_FULL_SCREEN_ISVALID);
+
+			}else if (_isAndroid()){
+
+				return false;
+
+			}else{
+
+				trace("LG-Function-isValidNativeExpressFullScreenVideo-Not a Android/iOS module");
+				return false;
+			}
+		}
+
+		/**
+		 *@brief showNativeExpressFullScreenVideo
+		 */
+		 public static function showNativeExpressFullScreenVideo():Boolean{
+
+			if (_isIOS()){
+
+				return LGAdvert.getInstance().extContext.call(LGFunctions.NATIVE_EXPRESS_FULL_SCREEN_SHOW);
+
+			}else if (_isAndroid()){
+
+				return false;
+
+			}else{
+
+				trace("LG-Function-showValidNativeExpressFullScreenVideo-Not a Android/iOS module");
+				return false;
+			}
+		}
+
+		/**
+		 *@brief showNativeExpressFullScreenVideoFromScene
+		 */
+		public static function showNativeExpressFullScreenVideoFromScene(ritSceneDesc:String):Boolean{
+
+			if (_isIOS()){
+
+				return LGAdvert.getInstance().extContext.call(LGFunctions.NATIVE_EXPRESS_FULL_SCREEN_SHOW_SCENE,ritSceneDesc);
+
+			}else if (_isAndroid()){
+
+				return false;
+
+			}else{
+
+				trace("LG-Function-showNativeExpressFullScreenVideoFromScene-Not a Android/iOS module");
+				return false;
+			}
+		}
+
+
+		///================ customAutoTrack ================
+		public static function registerEventByMethod(ritSceneDesc:String):Boolean{
+
+			if (_isIOS()){
+
+				return LGAdvert.getInstance().extContext.call(LGFunctions.NATIVE_EXPRESS_FULL_SCREEN_SHOW_SCENE,ritSceneDesc);
+
+			}else if (_isAndroid()){
+
+				return false;
+
+			}else{
+
+				trace("LG-Function-showNativeExpressFullScreenVideoFromScene-Not a Android/iOS module");
+				return false;
+			}
+		}
+
+
+
 		private static var sFunctionTicker:int;
 		private static var sFunctionMap:Object = new Object();
 		public static function functionToString(name:String,f:Function,singleInstance:Boolean):String{
@@ -813,350 +869,472 @@
 				var key:String = sFunctionTicker + "";
 				sFunctionMap[key] = f;
 				sFunctionTicker ++;
-				return  f == null ? null : key; 
+				return  f == null ? null : key;
 			}
 		}
-	
+
 
 		public function nativeCallBack(e:StatusEvent):void {
 
-			trace("Joypac SDK code:" + e.code + "  level:"+  e.level);
+			trace("LG SDK code:" + e.code + "  level:"+  e.level);
 
 			var code:String = e.code;
-			
+
 			var json:String = e.level;
 
 			var resp:Object = JSON.parse(json);
-			
+
 			var action:int = resp.what;
 
-			var app_extra:String=resp.app_extra;
-			trace("joypac onlinepara "+app_extra);
+			var verify:String=resp.verify;
 
 			switch(action){
-				case LGPrivateConst.JoypacInterstitialClick:
+				case LGPrivateConst.BDConfigRegisterFinishBlock:
 				{
-					if(this.interstitialClickListener != null){
-						this.interstitialClickListener();
-					}
-				}
-					break;
-				case LGPrivateConst.JoypacInterstitialClose:
-				{
-					if(this.interstitialCloseListener != null){
-						this.interstitialCloseListener();
-					}
-				}
-					break;
-				case LGPrivateConst.JoypacInterstitialDidLoad:
-				{
-					if(this.interstitialDidLoadListener != null){
-						this.interstitialDidLoadListener();
-					}
-				}
-					break;
-				case LGPrivateConst.JoypacInterstitialLoadFail:
-				{
-					if(this.interstitialLoadFailListener != null){
-						this.interstitialLoadFailListener();
-					}
-				}
-					break;
-				case LGPrivateConst.JoypacInterstitialShow:
-				{
-					if(this.interstitialShowListener != null){
-						this.interstitialShowListener();
-					}
-				}
-					
-					break;
-				case LGPrivateConst.JoypacInterstitialShowFail:
-				{
-					if(this.interstitialShowFailListener != null){
-						this.interstitialShowFailListener();
-					}
-				}
-					break;
-				///==========video============
-				case LGPrivateConst.JoypacVideoCilck:
-				{
-					if(this.videoClickListener != null){
-						this.videoClickListener();
-					}
-				}
-					break;
-				case LGPrivateConst.JoypacVideoClose:
-				{
-					if(this.videoCloseListener != null){
-						this.videoCloseListener();
-					}
-				}
-					break;
-				case LGPrivateConst.JoypacVideoDidLoad:
-				{
-					if(this.videoDidLoadListener != null){
-						this.videoDidLoadListener();
-					}
-				}
-					break;
-				case LGPrivateConst.JoypacVideoLoadFail:
-				{
-					if(this.videoLoadFailListener != null){
-						this.videoLoadFailListener();
-					}
-				}
-					break;
-				case LGPrivateConst.JoypacVideoRewardFail:
-				{
-					if(this.videoRewardFailListener != null){
-						this.videoRewardFailListener();
+					if(this.BDConfigRegisterFinishBlockListener != null){
+						this.BDConfigRegisterFinishBlockListener();
 					}
 				}
 					break;
 
-				case LGPrivateConst.JoypacVideoRewardSuccess:
+				case LGPrivateConst.BDConfigABTestFinishBlock:
 				{
-					if(this.videoRewardSuccessListener != null){
-						this.videoRewardSuccessListener();
+					if(this.BDConfigABTestFinishBlockListener != null){
+						this.BDConfigABTestFinishBlockListener();
 					}
 				}
 					break;
-				case LGPrivateConst.JoypacVideoShow:
-				{
-					if(this.videoShowListener != null){
-						this.videoShowListener();
-					}
-				}
-					break;
-				case LGPrivateConst.JoypacVideoShowFail:
-				{
-					if(this.videoShowFailListener != null){
-						this.videoShowFailListener();
-					}
-				}
-					break;
-				// banner
-				case LGPrivateConst.JoypacBannerClose:
-				{
-					if(this.bannerCloseListener != null){
-						this.bannerCloseListener();
-					}
-				}
-					break;
-				case LGPrivateConst.JoypacBannerClick:{
-					if(this.bannerClickListener != null){
-						this.bannerClickListener();
-					}
-				
-				}
-					break;
-				case LGPrivateConst.JoypacBannerDidLoad:
-				{
-					if(this.bannerDidLoadListener != null){
-						this.bannerDidLoadListener();
-					}
-				}
-					break;
-				case LGPrivateConst.JoypacBannerDidShow:
-				{
-					if(this.bannerDidShowListener != null){
-						this.bannerDidShowListener();
-					}
-				}
-					break;
-				case LGPrivateConst.JoypacBannerLoadFail:
-				{
-					if(this.bannerLoadFailListener != null){
-						this.bannerLoadFailListener();
-					}
-				}
-					break;
-				
-				//native
-				case LGPrivateConst.JoypacNativeDidShow:
-				{
-					if(this.nativeDidShowListerner != null){
-						this.nativeDidShowListerner();
-					}
-				}
-					break;
-				case LGPrivateConst.JoypacNativeLoadFail:
-				{
-					if(this.nativeLoadFailListerner != null){
-						this.nativeLoadFailListerner();
-					}
-				}				
-					break;
-				case LGPrivateConst.JoypacNativeClick:
-				{
-					if(this.nativeClickListerner != null){
-						this.nativeClickListerner();
-					}
-				}
-					break;
-				
-				case LGPrivateConst.JoypacNativeStartPlay:
-				{
-					if(this.nativeStartPlayListerner != null){
-						this.nativeStartPlayListerner();
-					}
-				}
-					break;
-				
-				case LGPrivateConst.JoypacNativeEndPlay:
-				{
-					if(this.nativeEndPlayListerner != null){
-						this.nativeEndPlayListerner();
-					}
-				}
-					break;
-				///MTG
-				case LGPrivateConst.MTGInterActivAdsDidload:
-				{
-					if(this.MTGInterActiveDidLoadListerner !=null){
-						this.MTGInterActiveDidLoadListerner();
-					}
-				}
-					break;
-				case LGPrivateConst.MTGInterActivAdsLoadFail:
-				{
-					if(this.MTGInterActiveLoadFailListerner !=null){
-						this.MTGInterActiveLoadFailListerner();
-					}
-				}
-					break;
-				case LGPrivateConst.MTGInterActivAdsDidShow:
-				{
-					if(this.MTGInterActiveDidShowListerner !=null){
-						this.MTGInterActiveDidShowListerner();
-					}
-				}
-					break;
-				case LGPrivateConst.MTGInterActivAdsShowFail:
-				{
-					if(this.MTGInterActiveShowFailListerner !=null){
-						this.MTGInterActiveShowFailListerner();
-					}
-				}
-					break;
-				case LGPrivateConst.MTGInterActivAdsDidClick:
-				{
-					if(this.MTGInterActiveDidClickListerner !=null){
-						this.MTGInterActiveDidClickListerner();
-					}
-				}
-					break;
-				case LGPrivateConst.MTGInterActivAdsDidMiss:
-				{
-					if(this.MTGInterActiveDidMissListerner !=null){
-						this.MTGInterActiveDidMissListerner();
-					}
-				}
-					break;
-				case LGPrivateConst.MTGInterActivAdsDidCompleted:
-				{
-					if(this.MTGInterActiveDidCompletedListerner !=null){
-						this.MTGInterActiveDidCompletedListerner();
-					}
-				}
-					break;
-				case LGPrivateConst.MTGInterActivAdsRewardSuccess:
-				{
-					if(this.MTGInterActiveRewardSuccessListerner !=null){
-						this.MTGInterActiveRewardSuccessListerner();
-					}
-				}
-					break;
-				case LGPrivateConst.MTGInterActivAdsRewardFail:
-				{
-					if(this.MTGInterActiveRewardFailListerner !=null){
-						this.MTGInterActiveRewardFailListerner();
-					}
-				}
-					break;
-				///splash
-				case LGPrivateConst.JoypacSplashDidClick:
-				{
-					if(this.splashDidClickListerner != null){
-						this.splashDidClickListerner();
-					}
-				}
-					break;
-				
-				case LGPrivateConst.JoypacSplashDidClose:
-				{
-					if(this.splashDidCloseListerner != null){
-						this.splashDidCloseListerner();
-					}
-				}
-					break;
-				
-				case LGPrivateConst.JoypacSplashDidShow:
-				{
-					if(this.splashDidShowListerner != null){
-						this.splashDidShowListerner();
-					}
-				}
-					break;
-				case LGPrivateConst.XCodeSendSixty:
-				{
-					trace("receivedXcodeMessageBeforeXCodeSendSixty",stage.frameRate);
-					if(!this._main){
-						return;
-					}				
-					this._main["ActiveGame"]();
-					trace("endframerate"+stage.frameRate+"fps"+this._main['fps']+"chudan"+this._main["chudanFlg"]);
-					if(this.xcodeDidSendSixtyListerner !=null){
-						this.xcodeDidSendSixtyListerner();
-					}
-				}
-					break;
-				case LGPrivateConst.XCodeSendZero:
-				{
-					trace("wy 开始循环"+this._main);
-					if (!this._main) {
-						trace("wy--循环内部"+this._main);
-						return
-					}
-					trace("beforeframerate"+stage.frameRate+"fps"+this._main['fps']+"chudan"+this._main["chudanFlg"]);
-					//					this._main['fps'] = 500;
-					this._main["StopGame"]();
-					LGAdvert.getInstance().extContext.call(LGFunctions.JOYPAC_STOP_DISPLAYLINK);
 
-					trace("afterframerate"+stage.frameRate+"fps"+this._main['fps']+"chudan"+this._main["chudanFlg"]);
-					if(this.xcodeDidSendZeroListerner !=null){
-						this.xcodeDidSendZeroListerner();
+				case LGPrivateConst.RVDidLoad:
+				{
+					if(this.rewardedVideoAdDidLoadListener != null){
+						this.rewardedVideoAdDidLoadListener();
 					}
 				}
 					break;
-				case LGPrivateConst.JoypacOnlinePara:{
-					if(this.ReceiveSettingDataListerner!=null){
 
-						this.ReceiveSettingDataListerner(app_extra);
+				case LGPrivateConst.RVFailToLoad:
+				{
+					if(this.rewardedVideoAdLoadFailListener != null){
+						this.rewardedVideoAdLoadFailListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.RVVideoDidLoad:
+				{
+					if(this.rewardedVideoAdDidLoadListener != null){
+						this.rewardedVideoAdDidLoadListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.RVWillVisible:
+				{
+					if(this.rewardedVideoAdWillVisibleListener != null){
+						this.rewardedVideoAdWillVisibleListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.RVDidVisible:
+				{
+					if(this.rewardedVideoAdDidVisibleListener != null){
+						this.rewardedVideoAdDidVisibleListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.RVWillClose:
+				{
+					if(this.rewardedVideoAdWillCloseListener != null){
+						this.rewardedVideoAdWillCloseListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.RVDidClose:
+				{
+					if(this.rewardedVideoAdDidCloseListener != null){
+						this.rewardedVideoAdDidCloseListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.RVDidClick:
+				{
+					if(this.rewardedVideoAdDidClickListener != null){
+						this.rewardedVideoAdDidClickListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.RVDidPlayFinish:
+				{
+					if(this.rewardedVideoAdDidPlayFinishFailListener != null){
+						this.rewardedVideoAdDidPlayFinishFailListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.RVServerRewardDidSucceed:
+				{
+					if(this.rewardedVideoAdServerRewardDidSucceedListener != null){
+						this.rewardedVideoAdServerRewardDidSucceedListener(verify);
+					}
+				}
+					break;
+				case LGPrivateConst.RVServerRewardDidFail:
+				{
+					if(this.rewardedVideoAdServerRewardDidFailListener != null){
+						this.rewardedVideoAdServerRewardDidFailListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.RVDidClickSkip:
+				{
+					if(this.rewardedVideoAdDidClickSkipListener != null){
+						this.rewardedVideoAdDidClickSkipListener();
+					}
+				}
+					break;
+
+				// nativeExpressRV
+				case LGPrivateConst.NERVDidLoad:
+				{
+					if(this.nativeExpressRewardedVideoAdDidLoadListener != null){
+						this.nativeExpressRewardedVideoAdDidLoadListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NERVFailToLoad:{
+					if(this.nativeExpressRewardedVideoAdFailToLoadListener != null){
+						this.nativeExpressRewardedVideoAdFailToLoadListener();
+					}
+
+				}
+					break;
+
+				case LGPrivateConst.NERVCallback:
+				{
+					if(this.nativeExpressRewardedVideoAdCallbackListener != null){
+						this.nativeExpressRewardedVideoAdCallbackListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NERVDidDownLoadVideo:
+				{
+					if(this.nativeExpressRewardedVideoAdDidDownLoadVideoListener != null){
+						this.nativeExpressRewardedVideoAdDidDownLoadVideoListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NERVViewRenderSuccess:
+				{
+					if(this.nativeExpressRewardedVideoAdViewRenderSuccessListener != null){
+						this.nativeExpressRewardedVideoAdViewRenderSuccessListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NERVViewRenderFail:
+				{
+					if(this.nativeExpressRewardedVideoAdViewRenderFailListener != null){
+						this.nativeExpressRewardedVideoAdViewRenderFailListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NERVWillVisible:
+				{
+					if(this.nativeExpressRewardedVideoAdWillVisibleListener != null){
+						this.nativeExpressRewardedVideoAdWillVisibleListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NERVDidVisible:
+				{
+					if(this.nativeExpressRewardedVideoAdDidVisibleListener != null){
+						this.nativeExpressRewardedVideoAdDidVisibleListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NERVWillClose:
+				{
+					if(this.nativeExpressRewardedVideoAdWillCloseListener != null){
+						this.nativeExpressRewardedVideoAdWillCloseListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NERVDidClose:
+				{
+					if(this.nativeExpressRewardedVideoAdDidCloseListener != null){
+						this.nativeExpressRewardedVideoAdDidCloseListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NERVDidClick:
+				{
+					if(this.nativeExpressRewardedVideoAdDidClickListener !=null){
+						this.nativeExpressRewardedVideoAdDidClickListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NERVDidClickSkip:
+				{
+					if(this.nativeExpressRewardedVideoAdDidClickSkipListener !=null){
+						this.nativeExpressRewardedVideoAdDidClickSkipListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NERVDidPlayFinish:
+				{
+					if(this.nativeExpressRewardedVideoAdDidPlayFinishListener !=null){
+						this.nativeExpressRewardedVideoAdDidPlayFinishListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NERVServerRewardDidSucceed:
+				{
+					if(this.nativeExpressRewardedVideoAdServerRewardDidSucceedListener !=null){
+						this.nativeExpressRewardedVideoAdServerRewardDidSucceedListener(verify);
+					}
+				}
+					break;
+
+				case LGPrivateConst.NERVServerRewardDidFail:
+				{
+					if(this.nativeExpressRewardedVideoAdServerRewardDidFailListener !=null){
+						this.nativeExpressRewardedVideoAdServerRewardDidFailListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NERVDidCloseOtherController:
+				{
+					if(this.nativeExpressRewardedVideoAdDidCloseOtherControllerListener !=null){
+						this.nativeExpressRewardedVideoAdDidCloseOtherControllerListener();
+					}
+				}
+					break;
+
+				//fullScreenVideo
+				case LGPrivateConst.FSVMateDidLoad:
+				{
+					if(this.fullscreenVideoMaterialMetaAdDidLoadListener !=null){
+						this.fullscreenVideoMaterialMetaAdDidLoadListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.FSVMateFailToLoad:
+				{
+					if(this.fullscreenVideoAdFailToLoadListener !=null){
+						this.fullscreenVideoAdFailToLoadListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.FSVDataDidLoad:
+				{
+					if(this.fullscreenVideoAdVideoDataDidLoadListener !=null){
+						this.fullscreenVideoAdVideoDataDidLoadListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.FSVWillVisible:
+				{
+					if(this.fullscreenVideoAdWillVisibleListener != null){
+						this.fullscreenVideoAdWillVisibleListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.FSVDidVisible:
+				{
+					if(this.fullscreenVideoAdDidVisibleListener != null){
+						this.fullscreenVideoAdDidVisibleListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.FSVDidClick:
+				{
+					if(this.fullscreenVideoAdDidClickListener != null){
+						this.fullscreenVideoAdDidClickListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.FSVWillClose:
+				{
+					if(this.fullscreenVideoAdWillCloseListener !=null){
+						this.fullscreenVideoAdWillCloseListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.FSVDidClose:
+				{
+					if(this.fullscreenVideoAdDidCloseListener !=null){
+						this.fullscreenVideoAdDidCloseListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.FSVDidFinish:{
+					if(this.fullscreenVideoAdDidPlayFinishListener!=null){
+						this.fullscreenVideoAdDidPlayFinishListener();
 					}
 				}
 				 break;
+
+				case LGPrivateConst.FSVDidClickSkip:{
+					if(this.fullscreenVideoAdDidClickSkipListener!=null){
+						this.fullscreenVideoAdDidClickSkipListener();
+					}
+				}
+					break;
+
+				///nativeExpressFullScreenVideo
+				case LGPrivateConst.NEFSVDidLoad:{
+					if(this.nativeExpressFullScreenVideoAdDidLoadListener!=null){
+						this.nativeExpressFullScreenVideoAdDidLoadListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NEFSVFailToLoad:{
+					if(this.nativeExpressFullScreenVideoAdFailToLoadListener!=null){
+						this.nativeExpressFullScreenVideoAdFailToLoadListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NEFSVRenderSuccess:{
+					if(this.nativeExpressFullScreenVideoAdViewRenderSuccessListener!=null){
+						this.nativeExpressFullScreenVideoAdViewRenderSuccessListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NEFSVRenderFail:{
+					if(this.nativeExpressFullScreenVideoAdViewRenderFailListener!=null){
+						this.nativeExpressFullScreenVideoAdViewRenderFailListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NEFSVDownLoad:{
+					if(this.nativeExpressFullScreenVideoAdDidDownLoadVideoListener!=null){
+						this.nativeExpressFullScreenVideoAdDidDownLoadVideoListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NEFSVWillVisible:{
+					if(this.nativeExpressFullScreenVideoAdWillVisibleListener!=null){
+						this.nativeExpressFullScreenVideoAdWillVisibleListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NEFSVDidVisible:{
+					if(this.nativeExpressFullScreenVideoAdDidVisibleListener!=null){
+						this.nativeExpressFullScreenVideoAdDidVisibleListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NEFSVDidClick:{
+					if(this.nativeExpressFullScreenVideoAdDidClickListener!=null){
+						this.nativeExpressFullScreenVideoAdDidClickListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NEFSVClickSkip:{
+					if(this.nativeExpressFullScreenVideoAdDidClickSkipListener!=null){
+						this.nativeExpressFullScreenVideoAdDidClickSkipListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NEFSVWillClose:{
+					if(this.nativeExpressFullScreenVideoAdWillCloseListener!=null){
+						this.nativeExpressFullScreenVideoAdWillCloseListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NEFSVDidClose:{
+					if(this.nativeExpressFullScreenVideoAdDidCloseListener!=null){
+						this.nativeExpressFullScreenVideoAdDidCloseListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NEFSVPlayFinish:{
+					if(this.nativeExpressFullScreenVideoAdDidPlayFinishListener!=null){
+						this.nativeExpressFullScreenVideoAdDidPlayFinishListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NEFSVCallback:{
+					if(this.nativeExpressFullScreenVideoAdCallbackListener!=null){
+						this.nativeExpressFullScreenVideoAdCallbackListener();
+					}
+				}
+					break;
+
+				case LGPrivateConst.NEFSVCloseOther:{
+					if(this.nativeExpressFullScreenVideoAdDidCloseOtherControllerListener!=null){
+						this.nativeExpressFullScreenVideoAdDidCloseOtherControllerListener();
+					}
+				}
+					break;
 			}
-		} 
+		}
 		public function LGAdvert(){
 			if (!extContext) {
 				extContext = ExtensionContext.createExtensionContext(EXTENSION_ID, null);
 				if(extContext == null){
-					trace("Joypac createExtensionContext error");
+					trace("LG createExtensionContext error");
 				}
 				extContext.addEventListener( StatusEvent.STATUS, nativeCallBack);
-			}   
+			}
 		}
-		
+
 		public static function getInstance():LGAdvert {
 			if(instance == null)
 				instance = new LGAdvert();
 			return instance;
 		}
-		
+
+		private static function _isIOS():Boolean {
+			return Capabilities.manufacturer.indexOf("iOS") > -1 && Capabilities.os.indexOf("x86_64") < 0 && Capabilities.os.indexOf("i386") < 0;
+		}
+
+		private static function _isAndroid():Boolean {
+
+			return Capabilities.manufacturer.indexOf("Android") > -1;
+		}
+
 		public  function setMain(main:MovieClip):void {
-			trace("before获取main函数"+ main);
-		 	this._main = main;		
+		 	this._main = main;
 		}
 	}
 }

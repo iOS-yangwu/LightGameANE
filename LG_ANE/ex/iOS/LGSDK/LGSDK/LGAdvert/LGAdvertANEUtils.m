@@ -42,7 +42,7 @@ FREObject LGAdvertCreateFREDouble(double value)
     return obj;
 }
 
-#pragma mark int
+#pragma mark - int
 int LGAdvertGetIntFromFREObject(FREObject obj){
     
     int32_t number;
@@ -57,7 +57,7 @@ FREObject LGAdvertCreateFREInt(int value){
     return obj;
 }
 
-#pragma mark -bool
+#pragma mark - bool
 BOOL LGAdvertGetBoolFromFREObject(FREObject obj){
     
     uint32_t boolean;
@@ -73,7 +73,7 @@ FREObject LGAdvertCreateFREBool(BOOL value){
 }
 
 
-#pragma mark objToJsonString
+#pragma mark - objToJsonString
 NSString *LGAdvertObj2ANEJSON(id obj){
     
     if (obj&&[NSJSONSerialization isValidJSONObject:obj]){
@@ -90,14 +90,14 @@ NSString *LGAdvertObj2ANEJSON(id obj){
 }
 
 
-#pragma mark sendMessageToANE(NSString)
+#pragma mark - sendMessageToANE(NSString)
 void LGAdvertSendANEMessage(int what,NSString *code,NSString *key,NSString *value){
     NSDictionary * dict = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:what], @"what",value,key, nil];
     NSString *json = LGAdvertObj2ANEJSON(dict);
     LGAdvertANEDispatchStatusEventAsyn(code,json);
 }
 
-#pragma mark sendMessageToAne(Dictionary)
+#pragma mark - sendMessageToAne(Dictionary)
 void LGAdvertSendANEMessageWithDict(NSDictionary *dict,NSString *code){
     
     NSString *json = LGAdvertObj2ANEJSON(dict);

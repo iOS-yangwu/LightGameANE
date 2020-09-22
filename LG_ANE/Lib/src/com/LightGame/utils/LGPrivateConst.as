@@ -3,12 +3,6 @@ package com.LightGame.utils
 	public  class LGPrivateConst
 	{
 
-		public static const  KEY_WHAT:String = "what";
-		public static const  KEY_PARAMST:String = "params";
-		public static const  KEY_REWARD_NAMET:String = "name";
-		public static const  KEY_REWARD_TYPET:String = "typeId";
-		public static const  KEY_REWARD_VALUET:String = "value";
-
 		///================ 深度转化 ================
 		/// <summary>
 		///   深度转化成功 block
@@ -167,7 +161,7 @@ package com.LightGame.utils
 
 		public static const  NEFSVCallback:int = 52;
 
-		public static const  NSFSVCloseOther:int = 53;
+		public static const  NEFSVCloseOther:int = 53;
 
 	}
 }

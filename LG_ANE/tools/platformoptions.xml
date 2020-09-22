@@ -1,6 +1,6 @@
-<platform xmlns="http://ns.adobe.com/air/extension/33.0">
-    <description>JoypacAdvert</description>
-    <copyright>JoypacAdvert</copyright>
+<platform xmlns="http://ns.adobe.com/air/extension/33.1">
+    <description>KGAdLGrt</description>
+    <copyright>LGAdvert</copyright>
     <linkerOptions>
         <option>-ios_version_min 8.0</option>
         <option>-lclang_rt.ios</option>
@@ -41,7 +41,6 @@
         <option>-framework CloudKit</option>
         <option>-framework GameKit</option>
         <option>-framework Twitter</option>
-        
         <option>-lsqlite3</option>
         <option>-lc++</option>
         <option>-lxml2</option>
@@ -52,35 +51,11 @@
     
     <packagedDependencies>
 
-        <!-- Uparpu-->
-        <packagedDependency>AnyThinkSDK.framework</packagedDependency>
-        <packagedDependency>AnyThinkBanner.framework</packagedDependency>
-        <packagedDependency>AnyThinkInterstitial.framework</packagedDependency>
-        <packagedDependency>AnyThinkRewardedVideo.framework</packagedDependency>
-        <packagedDependency>AnyThinkNative.framework</packagedDependency>
-        <packagedDependency>AnyThinkHeaderBidding.framework</packagedDependency>
-        <packagedDependency>AnyThinkMyOffer.framework</packagedDependency>
-        <packagedDependency>AnyThinkMyOfferInterstitialAdapter.framework</packagedDependency>
-        <packagedDependency>AnyThinkMyOfferRewardedVideoAdapter.framework</packagedDependency>
 
-        <!-- Mintegral 6-->
-        <packagedDependency>MTGSDK.framework</packagedDependency>
-        <packagedDependency>MTGSDKInterstitial.framework</packagedDependency>
-        <packagedDependency>MTGSDKInterstitialVideo.framework</packagedDependency>
-        <packagedDependency>MTGSDKReward.framework</packagedDependency>
-        <packagedDependency>MTGSDKInterActive.framework</packagedDependency>
-        <packagedDependency>MTGSDKBidding.framework</packagedDependency>
-        <packagedDependency>MTGSDKBanner.framework</packagedDependency>
-        <packagedDependency>AnyThinkMintegralInterstitialAdapter.framework</packagedDependency>
-        <packagedDependency>AnyThinkMintegralRewardedVideoAdapter.framework</packagedDependency>
-        <packagedDependency>AnyThinkMintegralNativeAdapter.framework</packagedDependency>
-        <packagedDependency>AnyThinkMintegralBannerAdapter.framework</packagedDependency>
+        <packagedDependency>LightGameSDK.framework</packagedDependency>
+      
 
-        <packagedDependency>BUAdSDK.framework</packagedDependency>
-        <packagedDependency>AnyThinkTTBannerAdapter.framework</packagedDependency>
-        <packagedDependency>AnyThinkTTInterstitialAdapter.framework</packagedDependency>
-        <packagedDependency>AnyThinkTTRewardedVideoAdapter.framework</packagedDependency>
-        <packagedDependency>AnyThinkTTNativeAdapter.framework</packagedDependency>
+        
         
     </packagedDependencies>
     
