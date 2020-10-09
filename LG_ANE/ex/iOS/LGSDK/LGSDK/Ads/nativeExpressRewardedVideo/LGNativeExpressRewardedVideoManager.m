@@ -112,7 +112,7 @@
  */
 - (void)nativeExpressRewardedVideoAdViewRenderFail:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd error:(NSError *_Nullable)error{
     
-    LGAdvertSendANEMessage(NERVViewRenderFail,NERVViewRenderFailCode,@"",@"");
+    LGAdvertSendANEMessage(NERVViewRenderFail,NERVViewRenderFailCode,@"errorMsg",[NSString stringWithFormat:@"%@",error]);
     
 }
 
@@ -176,7 +176,7 @@
  */
 - (void)nativeExpressRewardedVideoAdDidPlayFinish:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *_Nullable)error{
     
-    LGAdvertSendANEMessage(NERVDidPlayFinish,NERVDidPlayFinishCode,@"",@"");
+    LGAdvertSendANEMessage(NERVDidPlayFinish,NERVDidPlayFinishCode,@"errorMsg",[NSString stringWithFormat:@"%@",error]);
     
 }
 

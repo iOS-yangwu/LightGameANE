@@ -67,7 +67,7 @@
  */
 - (void)nativeExpressFullscreenVideoAd:(BUNativeExpressFullscreenVideoAd *)fullscreenVideoAd didFailWithError:(NSError *_Nullable)error{
     
-    LGAdvertSendANEMessage(NEFSVFailToLoad,NEFSVFailToLoadCode,@"",@"");
+    LGAdvertSendANEMessage(NEFSVFailToLoad,NEFSVFailToLoadCode,@"errorMsg",[NSString stringWithFormat:@"%@",error]);
 }
 
 /**
@@ -85,7 +85,7 @@
  */
 - (void)nativeExpressFullscreenVideoAdViewRenderFail:(BUNativeExpressFullscreenVideoAd *)rewardedVideoAd error:(NSError *_Nullable)error{
     
-    LGAdvertSendANEMessage(NEFSVRenderFail,NEFSVRenderFailCode,@"",@"");
+    LGAdvertSendANEMessage(NEFSVRenderFail,NEFSVRenderFailCode,@"errorMsg",[NSString stringWithFormat:@"%@",error]);
 }
 
 /**
@@ -150,7 +150,7 @@
  */
 - (void)nativeExpressFullscreenVideoAdDidPlayFinish:(BUNativeExpressFullscreenVideoAd *)fullscreenVideoAd didFailWithError:(NSError *_Nullable)error{
     
-    LGAdvertSendANEMessage(NEFSVPlayFinish,NEFSVPlayFinishCode,@"",@"");
+    LGAdvertSendANEMessage(NEFSVPlayFinish,NEFSVPlayFinishCode,@"errorMsg",[NSString stringWithFormat:@"%@",error]);
 }
 
 /**

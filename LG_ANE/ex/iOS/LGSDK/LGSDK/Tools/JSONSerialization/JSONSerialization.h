@@ -1,6 +1,5 @@
 //
 //  JSONSerialization.h
-//  Joypac_Unity_SDK
 //
 //  Created by 洋吴 on 2019/12/25.
 //  Copyright © 2019 洋吴. All rights reserved.

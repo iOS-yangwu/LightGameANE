@@ -10,7 +10,6 @@ mkdir tmp
 cp -r ../Lib/bin/LGAdvertLib.swc  tmp
 
 
-# AnyThink
 cp -r ../ex/iOS/LGSDK/LGSDK/Framework/LightGameSDK.framework tmp
 cp -r ../ex/iOS/LGSDK/LGSDK/Framework/BDTuringResource.bundle tmp
 cp -r ../ex/iOS/LGSDK/LGSDK/Framework/BUAdSDK.bundle tmp

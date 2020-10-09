@@ -77,7 +77,7 @@
  */
 - (void)rewardedVideoAd:(LGRewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *)error{
     
-    LGAdvertSendANEMessage(RVFailToLoad,RVFailToLoadCode,@"",@"");
+    LGAdvertSendANEMessage(RVFailToLoad,RVFailToLoadCode,@"errorMsg",[NSString stringWithFormat:@"%@",error]);
 }
 
 /**
@@ -138,7 +138,7 @@
  */
 - (void)rewardedVideoAdDidPlayFinish:(LGRewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *)error{
     
-    LGAdvertSendANEMessage(RVDidPlayFinish,RVDidPlayFinishCode,@"",@"");
+    LGAdvertSendANEMessage(RVDidPlayFinish,RVDidPlayFinishCode,@"errorMsg",[NSString stringWithFormat:@"%@",error]);
 
 }
 

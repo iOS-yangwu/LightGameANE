@@ -70,7 +70,7 @@
  */
 - (void)fullscreenVideoAd:(LGFullScreenVideoAd *)fullscreenVideoAd didFailWithError:(NSError *)error{
     
-    LGAdvertSendANEMessage(FSVMateFailToLoad,FSVMateFailToLoadCode,@"",@"");
+    LGAdvertSendANEMessage(FSVMateFailToLoad,FSVMateFailToLoadCode,@"errorMsg",[NSString stringWithFormat:@"%@",error]);
 
 }
 
@@ -134,7 +134,7 @@
  */
 - (void)fullscreenVideoAdDidPlayFinish:(LGFullScreenVideoAd *)fullscreenVideoAd didFailWithError:(NSError *)error{
     
-    LGAdvertSendANEMessage(FSVDidFinish,FSVDidFinishCode,@"",@"");
+    LGAdvertSendANEMessage(FSVDidFinish,FSVDidFinishCode,@"errorMsg",[NSString stringWithFormat:@"%@",error]);
 }
 
 /**

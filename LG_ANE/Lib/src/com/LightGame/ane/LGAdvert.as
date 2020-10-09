@@ -888,6 +888,8 @@
 
 			var verify:String=resp.verify;
 
+			var errorMsg:String = resp.errorMsg;
+
 			switch(action){
 				case LGPrivateConst.BDConfigRegisterFinishBlock:
 				{
@@ -916,7 +918,7 @@
 				case LGPrivateConst.RVFailToLoad:
 				{
 					if(this.rewardedVideoAdLoadFailListener != null){
-						this.rewardedVideoAdLoadFailListener();
+						this.rewardedVideoAdLoadFailListener(errorMsg);
 					}
 				}
 					break;
@@ -972,7 +974,7 @@
 				case LGPrivateConst.RVDidPlayFinish:
 				{
 					if(this.rewardedVideoAdDidPlayFinishFailListener != null){
-						this.rewardedVideoAdDidPlayFinishFailListener();
+						this.rewardedVideoAdDidPlayFinishFailListener(errorMsg);
 					}
 				}
 					break;
@@ -1044,7 +1046,7 @@
 				case LGPrivateConst.NERVViewRenderFail:
 				{
 					if(this.nativeExpressRewardedVideoAdViewRenderFailListener != null){
-						this.nativeExpressRewardedVideoAdViewRenderFailListener();
+						this.nativeExpressRewardedVideoAdViewRenderFailListener(errorMsg);
 					}
 				}
 					break;
@@ -1100,7 +1102,7 @@
 				case LGPrivateConst.NERVDidPlayFinish:
 				{
 					if(this.nativeExpressRewardedVideoAdDidPlayFinishListener !=null){
-						this.nativeExpressRewardedVideoAdDidPlayFinishListener();
+						this.nativeExpressRewardedVideoAdDidPlayFinishListener(errorMsg);
 					}
 				}
 					break;
@@ -1141,7 +1143,7 @@
 				case LGPrivateConst.FSVMateFailToLoad:
 				{
 					if(this.fullscreenVideoAdFailToLoadListener !=null){
-						this.fullscreenVideoAdFailToLoadListener();
+						this.fullscreenVideoAdFailToLoadListener(errorMsg);
 					}
 				}
 					break;
@@ -1196,7 +1198,7 @@
 
 				case LGPrivateConst.FSVDidFinish:{
 					if(this.fullscreenVideoAdDidPlayFinishListener!=null){
-						this.fullscreenVideoAdDidPlayFinishListener();
+						this.fullscreenVideoAdDidPlayFinishListener(errorMsg);
 					}
 				}
 				 break;
@@ -1218,7 +1220,7 @@
 
 				case LGPrivateConst.NEFSVFailToLoad:{
 					if(this.nativeExpressFullScreenVideoAdFailToLoadListener!=null){
-						this.nativeExpressFullScreenVideoAdFailToLoadListener();
+						this.nativeExpressFullScreenVideoAdFailToLoadListener(errorMsg);
 					}
 				}
 					break;
@@ -1232,7 +1234,7 @@
 
 				case LGPrivateConst.NEFSVRenderFail:{
 					if(this.nativeExpressFullScreenVideoAdViewRenderFailListener!=null){
-						this.nativeExpressFullScreenVideoAdViewRenderFailListener();
+						this.nativeExpressFullScreenVideoAdViewRenderFailListener(errorMsg);
 					}
 				}
 					break;
@@ -1288,7 +1290,7 @@
 
 				case LGPrivateConst.NEFSVPlayFinish:{
 					if(this.nativeExpressFullScreenVideoAdDidPlayFinishListener!=null){
-						this.nativeExpressFullScreenVideoAdDidPlayFinishListener();
+						this.nativeExpressFullScreenVideoAdDidPlayFinishListener(errorMsg);
 					}
 				}
 					break;

@@ -41,22 +41,24 @@
         <option>-framework CloudKit</option>
         <option>-framework GameKit</option>
         <option>-framework Twitter</option>
+        <option>-framework Photos</option>
+        <option>-framework MultipeerConnectivity</option>
+        <option>-framework AuthenticationServices</option>
+        <option>-framework VideoToolBox</option>
+        <option>-framework MetaPerformanceShaders</option>
+        <option>-framework MediaToolbox</option>
         <option>-lsqlite3</option>
         <option>-lc++</option>
         <option>-lxml2</option>
         <option>-lz</option>
         <option>-lz.1.2.5</option>
         <option>-lresolv.9</option>
+        <option>-lcompression</option>
+        <option>-liconv</option>
     </linkerOptions>
     
     <packagedDependencies>
-
-
         <packagedDependency>LightGameSDK.framework</packagedDependency>
-      
-
-        
-        
     </packagedDependencies>
     
 </platform>
