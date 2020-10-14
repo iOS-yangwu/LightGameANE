@@ -15,7 +15,7 @@
 
 @interface LGManager ()
 
-@property (nonatomic,strong)LGBDConfig *config;
+//@property (nonatomic,strong)LGBDConfig *config;
 
 @end
 
@@ -60,28 +60,46 @@ customHeaderBlock:(NSString *)customHeaderBlock{
     bdCfg.customHeaderBlock = ^NSDictionary<NSString *,id> * _Nonnull{
         return dict;
     };
+    
+    __block NSString *deviceId;
+    __block NSString *installId;
+    __block NSString *ssId;
+    __block NSString *userUniqueId;
     bdCfg.registerFinishBlock = ^(NSString * _Nullable deviceID, NSString * _Nullable installID, NSString * _Nullable ssID, NSString * _Nullable userUniqueID) {
-        NSDictionary *dic = @{@"deviceID":deviceID,@"installID":installID,@"ssID":ssID,@"userUniqueID":userUniqueID};
-        NSString *jsonStr = [JSONSerialization convertToJsonData:dic];
-        LGAdvertSendANEMessage(BDConfigRegisterFinishBlock,BDConfigRegisterFinishBlockCode,@"BDConfigRegisterFinishBlock",jsonStr);
-        
+
+
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+
+            deviceId = deviceID == nil?@"":deviceID;
+            installId = installID == nil?@"":installID;
+            ssId = ssID == nil?@"":ssID;
+            userUniqueId = userUniqueID == nil?@"":userUniqueID;
+    
+            NSDictionary *dic = @{@"deviceID":deviceId,@"installID":installId,@"ssID":ssId,@"userUniqueID":userUniqueId};
+            NSString *jsonStr = [JSONSerialization convertToJsonData:dic];
+            LGAdvertSendANEMessage(BDConfigRegisterFinishBlock,BDConfigRegisterFinishBlockCode,@"BDConfigRegisterFinishBlock",jsonStr);
+
+            });
+
     };
     bdCfg.ABTestFinishBlock = ^(BOOL ABTestEnabled, NSDictionary * _Nullable allConfigs) {
         if (ABTestEnabled) {
-            NSString *jsonStr = [JSONSerialization convertToJsonData:allConfigs];
-            LGAdvertSendANEMessage(BDConfigABTestFinishBlock,BDConfigABTestFinishBlockCode,@"BDConfigABTestFinishBlock",jsonStr);
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+
+                NSString *jsonStr = [JSONSerialization convertToJsonData:allConfigs];
+
+                LGAdvertSendANEMessage(BDConfigABTestFinishBlock,BDConfigABTestFinishBlockCode,@"BDConfigABTestFinishBlock",jsonStr);
+
+                });
+
         }
     };
-    self.config = bdCfg;
+    [[LightGameManager sharedInstance] configTTTrack:bdCfg];
+
     
 }
 - (void)startWithAppID:(NSString *)appID appName:(NSString *)appName channel:(NSString *)channel{
     
-    
-    if (self.config) {
-        
-        [[LightGameManager sharedInstance] configTTTrack:self.config];
-    }
     
     [LightGameManager startWithAppID:appID appName:appName channel:channel];
     

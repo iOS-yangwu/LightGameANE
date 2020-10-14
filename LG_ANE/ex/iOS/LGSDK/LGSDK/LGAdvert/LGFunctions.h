@@ -141,3 +141,13 @@
 /// addToFavouriteEventWithContentType
 #define ADDTOFAVOURITE_EVENT                 addToFavouriteEvent
 
+
+/*
+#pragma mark - splash
+/// load
+#define SPLASH_LOAD                          loadSplash
+/// isValid
+#define SPLASH_ISVALID                       isValidSplash
+/// show
+#define SPLASH_SHOW                          showSplash
+*/

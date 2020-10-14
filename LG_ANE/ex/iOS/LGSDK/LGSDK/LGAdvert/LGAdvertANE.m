@@ -13,6 +13,7 @@
 #import "LGFullScreenVideoManager.h"
 #import "LGNativeExpressFullScreenVideoManager.h"
 #import "LGCustomAutoTrack_ANE.h"
+#import "LGSplashAd.h"
 
 #pragma mark - sdk config
 /// setBDConfig
@@ -405,6 +406,31 @@ LG_ANE_FUNCTION(ADDTOFAVOURITE_EVENT){
     return NULL;
     
 }
+/*
+#pragma mark - splash
+/// load
+LG_ANE_FUNCTION(SPLASH_LOAD){
+    
+    NSString *slotId = LGAdvertGetStringFromFREObject(argv[0]);
+    int timeout = LGAdvertGetIntFromFREObject(argv[1]);
+    [[LGSplashAd manager] loadAd:slotId tolerateTimeout:timeout];
+    return NULL;
+}
+
+/// isValid
+LG_ANE_FUNCTION(SPLASH_ISVALID){
+    
+    BOOL isValid = [[LGSplashAd manager] isAdValid];
+    return LGAdvertCreateFREBool(isValid);
+}
+
+/// show
+LG_ANE_FUNCTION(SPLASH_SHOW){
+    
+    [[LGSplashAd manager] showAd];
+    return NULL;
+}
+*/
 
 #pragma mark- FLASH
 void LGANEInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToTest, const FRENamedFunction** functionsToSet)
@@ -463,6 +489,14 @@ void LGANEInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uin
         LG_MAP_FUNCTION(CHECKOUT_EVENT, NULL),
         LG_MAP_FUNCTION(ACCESSPAYMENTCHANNEL_EVENT, NULL),
         LG_MAP_FUNCTION(ADDTOFAVOURITE_EVENT, NULL),
+        
+        /*
+        /// splash
+        LG_MAP_FUNCTION(SPLASH_LOAD, NULL),
+        LG_MAP_FUNCTION(SPLASH_ISVALID, NULL),
+        LG_MAP_FUNCTION(SPLASH_SHOW, NULL),
+         */
+
         
     };
     

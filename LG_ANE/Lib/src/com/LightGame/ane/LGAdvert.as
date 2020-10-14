@@ -13,7 +13,7 @@
 
 	public class LGAdvert extends MovieClip implements IEventDispatcher
 	{
-		internal static var EXTENSION_ID:String = "com.lightGame.ane";
+		internal static var EXTENSION_ID:String = "com.LightGame.ane";
 		internal var extContext:ExtensionContext = null;
 		internal static var instance:LGAdvert;
 
@@ -311,6 +311,8 @@
 		/**
 		 * @brief  深度转化配置
 		 */
+
+
 		public static function setBDConfig(serviceVendor:int,autoTrackEnabled:Boolean,showDebugLog:Boolean,logNeedEncrypt:Boolean,userUniqueID:String,language:String,abServerVersions:String,customHeaderBlock:String):void{
 
 			if (_isIOS()){
@@ -890,11 +892,15 @@
 
 			var errorMsg:String = resp.errorMsg;
 
+			var BDConfigRegisterFinishBlock = resp.BDConfigRegisterFinishBlock;
+
+			var BDConfigABTestFinishBlock = resp.BDConfigABTestFinishBlock;
+
 			switch(action){
 				case LGPrivateConst.BDConfigRegisterFinishBlock:
 				{
 					if(this.BDConfigRegisterFinishBlockListener != null){
-						this.BDConfigRegisterFinishBlockListener();
+						this.BDConfigRegisterFinishBlockListener(BDConfigRegisterFinishBlock);
 					}
 				}
 					break;
@@ -902,7 +908,7 @@
 				case LGPrivateConst.BDConfigABTestFinishBlock:
 				{
 					if(this.BDConfigABTestFinishBlockListener != null){
-						this.BDConfigABTestFinishBlockListener();
+						this.BDConfigABTestFinishBlockListener(BDConfigABTestFinishBlock);
 					}
 				}
 					break;

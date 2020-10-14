@@ -144,9 +144,15 @@ LG_ANE_FUNCTION(ACCESSPAYMENTCHANNEL_EVENT);
 /// addToFavouriteEventWithContentType
 LG_ANE_FUNCTION(ADDTOFAVOURITE_EVENT);
 
-
-
-
+/*
+#pragma mark - splash
+/// load
+LG_ANE_FUNCTION(SPLASH_LOAD);
+/// isValid
+LG_ANE_FUNCTION(SPLASH_ISVALID);
+/// show
+LG_ANE_FUNCTION(SPLASH_SHOW);
+*/
 
 
 

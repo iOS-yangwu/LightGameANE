@@ -144,9 +144,20 @@ typedef enum {
     NEFSVPlayFinish,
     NEFSVCallback,
     NSFSVCloseOther, //53
+    //splashAd
+    SplashDidLoad,
+    SplashFailToLoad,
+    SplashWillVisible,
+    SplashDidClick,
+    SplashDidClose,
+    SplashWillClose,
+    SplashDidCloseOtherController,
+    SplashDidClickSkip,
+    SplashCountdownToZero
     
     
 } LGAdvertANEEvent;
+
 
 // nativeExpressFullScreenVideo
 NSString* const NEFSVDidLoadCode = @"nativeExpressFullscreenVideoAdDidLoad";
@@ -215,4 +226,13 @@ NSString* const RVDidClickSkipCode = @"rewardedVideoAdDidClickSkip";
 NSString* const BDConfigRegisterFinishBlockCode = @"BDConfigRegisterFinishBlock";
 NSString* const BDConfigABTestFinishBlockCode = @"BDConfigABTestFinishBlock";
 
-
+//splash
+NSString* const SplashDidLoadCode = @"SplashDidLoad";
+NSString* const SplashFailToLoadCode = @"SplashFailToLoad";
+NSString* const SplashWillVisibleCode = @"SplashWillVisible";
+NSString* const SplashDidClickCode = @"SplashDidClick";
+NSString* const SplashDidCloseCode = @"SplashDidClose";
+NSString* const SplashWillCloseCode = @"SplashWillClose";
+NSString* const SplashDidCloseOtherControllerCode = @"SplashDidCloseOtherController";
+NSString* const SplashDidClickSkipCode = @"SplashDidClickSkip";
+NSString* const SplashCountdownToZeroCode = @"SplashCountdownToZero";

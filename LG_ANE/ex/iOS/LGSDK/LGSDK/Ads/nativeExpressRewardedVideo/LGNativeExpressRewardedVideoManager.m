@@ -75,7 +75,7 @@
  */
 - (void)nativeExpressRewardedVideoAd:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *_Nullable)error{
     
-    LGAdvertSendANEMessage(NERVFailToLoad,NERVFailToLoadCode,@"",@"");
+    LGAdvertSendANEMessage(NERVFailToLoad,NERVFailToLoadCode,@"errorMsg",[NSString stringWithFormat:@"%@",error]);
     
 }
 /**

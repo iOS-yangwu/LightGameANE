@@ -4,7 +4,7 @@
     <configurations>
       <configuration name="Libs" target-platform="Mobile" pure-as="true" output-type="Library" output-file="LGAdvertLib.swc" output-folder="$MODULE_DIR$/bin">
         <dependencies>
-          <sdk name="AIR32" />
+          <sdk name="AIR33.1" />
         </dependencies>
         <compiler-options />
         <packaging-air-desktop />
@@ -19,7 +19,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="AIR32" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="jdk" jdkName="AIR33.1" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="LGAdvertLib" level="project" />
   </component>

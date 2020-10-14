@@ -19,6 +19,7 @@
 @implementation LGNativeExpressFullScreenVideoManager
 
 + (LGNativeExpressFullScreenVideoManager *)manager{
+    
     static LGNativeExpressFullScreenVideoManager *manager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -26,7 +27,6 @@
         manager = [[LGNativeExpressFullScreenVideoManager alloc]init];
     });
     return manager;
-    
 }
 
 - (void) loadAd:(NSString *)slotId{

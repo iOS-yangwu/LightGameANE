@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		66445E0B2511FD610017837A /* LGBDConfig_ANE.m in Sources */ = {isa = PBXBuildFile; fileRef = 66445E0A2511FD610017837A /* LGBDConfig_ANE.m */; };
+		665816AE2534021C0031BACB /* LGSplashAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 665816AD2534021C0031BACB /* LGSplashAd.m */; };
+		665816BA2535AF1C0031BACB /* MetalPerformanceShaders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 665816B92535AF1C0031BACB /* MetalPerformanceShaders.framework */; };
 		666082AA236A86A70029F94F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666082A9236A86A60029F94F /* CoreFoundation.framework */; };
 		66938F6F236FD2F300A3BD48 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66938F6E236FD2F200A3BD48 /* libsqlite3.tbd */; };
 		66938F71236FD31000A3BD48 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66938F70236FD31000A3BD48 /* libc++.tbd */; };
@@ -64,6 +66,9 @@
 /* Begin PBXFileReference section */
 		66445E092511FD610017837A /* LGBDConfig_ANE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGBDConfig_ANE.h; sourceTree = "<group>"; };
 		66445E0A2511FD610017837A /* LGBDConfig_ANE.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGBDConfig_ANE.m; sourceTree = "<group>"; };
+		665816AC2534021C0031BACB /* LGSplashAd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGSplashAd.h; sourceTree = "<group>"; };
+		665816AD2534021C0031BACB /* LGSplashAd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGSplashAd.m; sourceTree = "<group>"; };
+		665816B92535AF1C0031BACB /* MetalPerformanceShaders.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalPerformanceShaders.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework; sourceTree = DEVELOPER_DIR; };
 		666082A9236A86A60029F94F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		66938F6E236FD2F200A3BD48 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libsqlite3.tbd; sourceTree = DEVELOPER_DIR; };
 		66938F70236FD31000A3BD48 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libc++.tbd"; sourceTree = DEVELOPER_DIR; };
@@ -127,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				665816BA2535AF1C0031BACB /* MetalPerformanceShaders.framework in Frameworks */,
 				66F19B292372D8C8004540CE /* SystemConfiguration.framework in Frameworks */,
 				66F19B272372D8AE004540CE /* Security.framework in Frameworks */,
 				66F19B252372D89E004540CE /* SafariServices.framework in Frameworks */,
@@ -163,6 +169,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		665816AB253401E20031BACB /* splashAd */ = {
+			isa = PBXGroup;
+			children = (
+				665816AC2534021C0031BACB /* LGSplashAd.h */,
+				665816AD2534021C0031BACB /* LGSplashAd.m */,
+			);
+			path = splashAd;
+			sourceTree = "<group>";
+		};
 		669D944925109DD800DDA687 /* nativeExpressFullScreenVideo */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +246,7 @@
 		66B566C1228A651D0012F5A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				665816B92535AF1C0031BACB /* MetalPerformanceShaders.framework */,
 				66F19B282372D8C8004540CE /* SystemConfiguration.framework */,
 				66F19B262372D8AE004540CE /* Security.framework */,
 				66F19B242372D89E004540CE /* SafariServices.framework */,
@@ -304,6 +320,7 @@
 		66EB44432509F933005370CD /* Ads */ = {
 			isa = PBXGroup;
 			children = (
+				665816AB253401E20031BACB /* splashAd */,
 				669D944925109DD800DDA687 /* nativeExpressFullScreenVideo */,
 				66EB444D250A3E75005370CD /* fullScreenVideo */,
 				66EB4449250A22EC005370CD /* nativeExpressRewardedVideo */,
@@ -400,6 +417,7 @@
 				669D94552510D8BB00DDA687 /* LGCustomAutoTrack_ANE.m in Sources */,
 				66B566DF228A69C70012F5A6 /* LGAdvertANEUtils.m in Sources */,
 				66B566E4228A6DEF0012F5A6 /* LGAdvertANE.m in Sources */,
+				665816AE2534021C0031BACB /* LGSplashAd.m in Sources */,
 				66EB443B2509DD99005370CD /* LGManager.m in Sources */,
 				66445E0B2511FD610017837A /* LGBDConfig_ANE.m in Sources */,
 				66EB44472509F993005370CD /* LGRewardVideoManager.m in Sources */,

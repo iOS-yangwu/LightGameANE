@@ -121,9 +121,9 @@ package com.LightGame.utils
 
 		public static const  FSVWillVisible:int = 33;
 
-		public static const  FSVDidClick:int = 34;
+		public static const  FSVDidVisible:int = 34;
 
-		public static const  FSVDidVisible:int = 35;
+		public static const  FSVDidClick:int = 35;
 
 		public static const  FSVWillClose:int = 36;
 
@@ -162,6 +162,32 @@ package com.LightGame.utils
 		public static const  NEFSVCallback:int = 52;
 
 		public static const  NEFSVCloseOther:int = 53;
+
+		/*public static const  SplashDidLoad:int = 54;
+
+		public static const  SplashFailToLoad:int = 55;
+
+		public static const  SplashWillVisible:int = 56;
+
+		public static const  SplashDidClick:int = 57;
+
+		public static const  SplashDidClose:int = 58;
+
+		public static const  SplashWillClose:int = 59;
+
+		public static const  SplashDidCloseOtherController:int = 60;
+
+		public static const  SplashDidClickSkip:int = 61;
+
+		public static const  SplashCountdownToZero:int = 62;*/
+
+		public static const LGBDAutoTrackServiceVendorCN:int = 0;
+		public static const LGBDAutoTrackServiceVendorSG:int = 1;
+		public static const LGBDAutoTrackServiceVendorVA:int = 2;
+
+
+
+
 
 	}
 }

@@ -45,7 +45,7 @@
         <option>-framework MultipeerConnectivity</option>
         <option>-framework AuthenticationServices</option>
         <option>-framework VideoToolBox</option>
-        <option>-framework MetaPerformanceShaders</option>
+        <option>-framework MetalPerformanceShaders</option>
         <option>-framework MediaToolbox</option>
         <option>-lsqlite3</option>
         <option>-lc++</option>
@@ -55,6 +55,7 @@
         <option>-lresolv.9</option>
         <option>-lcompression</option>
         <option>-liconv</option>
+        <option>-lc++abi</option>
     </linkerOptions>
     
     <packagedDependencies>

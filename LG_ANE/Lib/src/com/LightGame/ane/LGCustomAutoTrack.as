@@ -7,7 +7,7 @@ import flash.system.Capabilities;
 import com.LightGame.utils.LGFunctions;
 
     public class LGCustomAutoTrack extends MovieClip implements IEventDispatcher{
-        internal static var EXTENSION_ID:String = "com.lightGame.ane";
+        internal static var EXTENSION_ID:String = "com.LightGame.ane";
         internal var extContext:ExtensionContext = null;
         internal static var instance:com.LightGame.ane.LGCustomAutoTrack;
 
