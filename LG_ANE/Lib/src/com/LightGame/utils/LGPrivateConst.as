@@ -163,7 +163,14 @@ package com.LightGame.utils
 
 		public static const  NEFSVCloseOther:int = 53;
 
-		/*public static const  SplashDidLoad:int = 54;
+
+		public static const LGBDAutoTrackServiceVendorCN:int = 0;
+		public static const LGBDAutoTrackServiceVendorSG:int = 1;
+		public static const LGBDAutoTrackServiceVendorVA:int = 2;
+
+
+		/*
+		public static const  SplashDidLoad:int = 54;
 
 		public static const  SplashFailToLoad:int = 55;
 
@@ -180,12 +187,6 @@ package com.LightGame.utils
 		public static const  SplashDidClickSkip:int = 61;
 
 		public static const  SplashCountdownToZero:int = 62;*/
-
-		public static const LGBDAutoTrackServiceVendorCN:int = 0;
-		public static const LGBDAutoTrackServiceVendorSG:int = 1;
-		public static const LGBDAutoTrackServiceVendorVA:int = 2;
-
-
 
 
 
